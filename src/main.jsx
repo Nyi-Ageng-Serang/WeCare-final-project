@@ -11,6 +11,8 @@ import './index.css';
 import DashboardProfile from './pages/DashboardProfile.jsx';
 import DashboardPelatihan from './pages/DashboardPelatihan.jsx';
 import DashboardCVGenerator from './pages/DashboardCVGenerator.jsx';
+import DashboardPortfolio from './pages/DashboardPortfolio.jsx';
+import DashboardLowongan from './pages/DashboardLowongan.jsx';
 
 // Mengatur routing
 const router = createBrowserRouter([
@@ -27,8 +29,16 @@ const router = createBrowserRouter([
     element: <DashboardPelatihan />,
   },
   {
+    path: "portfolio",
+    element: <DashboardPortfolio/>,
+  },
+  {
     path: "cv-generator",
     element: <DashboardCVGenerator />,
+  },
+  {
+    path: "lowongan",
+    element: <DashboardLowongan/>,
   },
 ]);
 

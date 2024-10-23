@@ -6,7 +6,8 @@ function DashboardProfile() {
     <div className="flex">
       <Sidebar /> {/* Memanggil Sidebar */}
       <div className="flex-grow p-8">
-        <h1 className="text-3xl font-bold">Profile</h1>
+        <h1 className="text-3xl font-bold font-sans text-[#921A40]">Profile</h1> <br />
+        <hr className="border-0 h-px bg-[#921A40] "/>
       </div>
     </div>
   );
