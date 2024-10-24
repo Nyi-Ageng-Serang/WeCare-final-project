@@ -23,10 +23,10 @@ function Sidebar() {
   const location = useLocation(); // Mengambil lokasi saat ini
 
   return (
-    <aside className="w-56 h-screen bg-[#FFB1B1] text-[#921A40] flex flex-col rounded-r-[2rem] shadow-[0_10px_20px_rgba(0,0,0,0.3),inset_0_4px_6px_rgba(0,0,0,0.2)] relative">
+    <aside className="w-56 min-w-56 h-screen bg-[#FFB1B1] text-[#921A40] flex flex-col rounded-r-[2rem] shadow-[0_10px_20px_rgba(0,0,0,0.3),inset_0_4px_6px_rgba(0,0,0,0.2)] relative">
       <div className="px-4 py-2">
         {/* Logo */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-4 mt-8">
           <img
             src={logoWecare}
             alt="WeCare Logo"
