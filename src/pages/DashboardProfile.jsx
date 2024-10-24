@@ -22,13 +22,13 @@ function DashboardProfile() {
                 alt="Profile" 
                 className="h-[248px] w-[190px] rounded-lg object-cover shadow-md"
               />
-              <button className="absolute bottom-1 right-1 bg-[#921A40] text-white p-2 rounded-full shadow-lg">
+              <button className="absolute bottom-2 right-0 bg-[#921A40] text-white p-2 rounded-full shadow-lg">
                 <TbEdit size={24}/>
               </button>
             </div>
 
            {/* Profile Info */}
-            <div className="flex flex-col items-center justify-center bg-[#FEE8E8] rounded-lg shadow-lg w-3/4 h-64">
+            <div className="flex flex-col items-center justify-center bg-[#FFB1B1] bg-opacity-40 rounded-lg shadow-lg w-3/4 h-64">
               <div className="items-center w-full px-32">
                 <div className="grid grid-cols-[3fr,1fr,8fr] gap-2 mb-2 items-center">
                   <span className="font-bold text-left">Nama</span>
@@ -50,7 +50,7 @@ function DashboardProfile() {
           </div>
 
           {/* Recommendation Section */}
-          <div className="mt-8 bg-[#FEE8E8] p-6 rounded-lg shadow-lg">
+          <div className="mt-8 bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-lg">
             <p className="text-center font-semibold mb-4">
               Berdasarkan Hasil Test Minat Bakat Kamu cenderung cocok dibidang
             </p>
@@ -60,7 +60,7 @@ function DashboardProfile() {
           </div>
 
           {/* Job Description Section */}
-          <div className="mt-8 bg-[#FFF0F0] p-6 rounded-lg shadow-lg">
+          <div className="mt-8 bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-lg">
             <p className="font-semibold">
               Copywriting adalah pekerjaan yang melibatkan penulisan teks atau konten 
               untuk tujuan pemasaran atau promosi. Tujuan utamanya adalah untuk menarik 
