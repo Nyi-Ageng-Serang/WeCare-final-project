@@ -28,7 +28,9 @@ function Navbar() {
 
             <li className=" hover:text-red">Comunity</li>
 
-            <li className=" hover:text-red">Blog</li>
+            <li className=" hover:text-red">
+              <Link to="/Blog">Blog</Link>
+            </li>
           </div>
 
           {/* Regis & Login */}
