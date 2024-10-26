@@ -1,4 +1,5 @@
 import ArtikelSection from "./ArtikelSection";
+import CeritaSuksesSection from "./CeritaSuksesSection";
 import CommunityCTA from "./CTAkomunitas";
 import FAQSection from "./FAQSection";
 import HeroSection from "./HeroSection";
@@ -12,6 +13,7 @@ function BlogPage() {
       <CommunityCTA/>
       <NewsSection/>
       <FAQSection/>
+      <CeritaSuksesSection/>
     </>
   );
 }
