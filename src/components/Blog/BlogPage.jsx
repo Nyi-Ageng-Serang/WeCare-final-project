@@ -1,4 +1,5 @@
 import ArtikelSection from "./ArtikelSection";
+import CommunityCTA from "./CTAkomunitas";
 import HeroSection from "./HeroSection";
 
 function BlogPage() {
@@ -6,6 +7,7 @@ function BlogPage() {
     <>
       <HeroSection/>
       <ArtikelSection/>
+      <CommunityCTA/>
     </>
   );
 }
