@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import career from "../../assets/rekomendasi.png";
 
 function Career() {
@@ -25,7 +26,7 @@ function Career() {
             </p>
 
             <button className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-pink hover:border-pink hover:text-red">
-              Ikuti tes Bakat Minat
+              <Link to="/tes">Ikuti tes Bakat Minat</Link>
             </button>
           </div>
 
