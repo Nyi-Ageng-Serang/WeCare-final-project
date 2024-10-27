@@ -33,13 +33,13 @@ function Navbar() {
 
           {/* Regis & Login */}
           <div>
-            <a className="hidden lg:inline-block font-semibold border-2 border-red text-red py-1 px-6 rounded-full hover:bg-pink hover:border-pink hover:text-red mr-3">
-              Masuk
-            </a>
+            <li className="hidden lg:inline-block font-semibold border-2 border-red text-red py-1 px-6 rounded-full hover:bg-pink hover:border-pink hover:text-red mr-3">
+              <Link to="/register"> Masuk</Link>
+            </li>
 
-            <a className="hidden lg:inline-block font-semibold border-2 border-red bg-red text-white py-1 px-6 rounded-full hover:bg-pink hover:border-pink hover:text-red">
-              Log In
-            </a>
+            <li className="hidden lg:inline-block font-semibold border-2 border-red bg-red text-white py-1 px-6 rounded-full hover:bg-pink hover:border-pink hover:text-red">
+              <Link to="/login">Log In</Link>
+            </li>
           </div>
 
           {/* Mobile menu button */}
@@ -66,12 +66,12 @@ function Navbar() {
           <a className="block py-2 font-semibold text-gray-800 hover:text-red">
             Blog
           </a>
-          <a className="block py-2 font-semibold border-2 border-red text-red rounded-full text-center mt-4 hover:bg-pink hover:border-pink hover:text-red">
-            Masuk
-          </a>
-          <a className="block py-2 font-semibold border-2 border-red bg-red text-white rounded-full text-center mt-4 hover:bg-pink hover:border-pink hover:text-red">
-            Log In
-          </a>
+          <li className="block py-2 font-semibold border-2 border-red text-red rounded-full text-center mt-4 hover:bg-pink hover:border-pink hover:text-red">
+            <Link to="/register"> Masuk</Link>
+          </li>
+          <li className="block py-2 font-semibold border-2 border-red bg-red text-white rounded-full text-center mt-4 hover:bg-pink hover:border-pink hover:text-red">
+            <Link to="/login">Log In</Link>
+          </li>
         </div>
       </div>
     </div>
