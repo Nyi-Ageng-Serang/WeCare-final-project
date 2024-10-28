@@ -5,6 +5,8 @@ import AboutPage from "./components/About/AboutPage";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Tes from "./components/Tes/Tes";
+import Soal from "./components/Tes/Soal";
+import Result from "./components/Tes/Result";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/tes" element={<Tes />} />
+        <Route path="/soal" element={<Soal />} />
+        <Route path="/result" element={<Result />} />
       </Routes>
     </div>
   );

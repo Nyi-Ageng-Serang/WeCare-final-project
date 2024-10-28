@@ -14,10 +14,13 @@ function AboutSection() {
               Sebuah platform yang didedikasikan untuk membantu perempuan yang
               ingin kembali berkarier setelah mengalami career break. Kami
               memahami bahwa transisi kembali ke dunia kerja, terutama dengan
-              tanggung jawab keluarga, bisa menjadi tantangan tersendiri. Itulah
-              mengapa kami berfokus untuk menyediakan akses ke peluang kerja
-              fleksibel yang dapat disesuaikan dengan kebutuhan pribadi setiap
-              perempuan, baik dari segi waktu maupun lokasi kerja.
+              tanggung jawab keluarga, bisa menjadi tantangan tersendiri.
+            </p>
+
+            <p className="mt-4 font-semibold">
+              Itulah mengapa kami berfokus untuk menyediakan akses ke peluang
+              kerja fleksibel yang dapat disesuaikan dengan kebutuhan pribadi
+              setiap perempuan, baik dari segi waktu maupun lokasi kerja.
             </p>
           </div>
 

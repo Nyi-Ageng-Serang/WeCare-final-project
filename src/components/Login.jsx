@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { json, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -13,7 +13,7 @@ function Login() {
 
     if (user && user.email === email && user.password === password) {
       alert("login berhasil");
-      navigate("/dashboard");
+      navigate("/");
     } else {
       alert("email atau password salah");
     }
