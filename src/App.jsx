@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
-import DashboardProfile from './pages/DashboardProfile';  
-import DashboardPelatihan from './pages/DashboardPelatihan'; 
-import DashboardPortfolio from "./pages/DashboardPortfolio";
-import DashboardCVGenerator from "./pages/DashboardCVGenerator";
-import DashboardLowongan from "./pages/DashboardLowongan";
+import Dashboard from "./Dashboard/Dashboard";
+import DashboardProfile from './Dashboard/DashboardProfile';  
+import DashboardPelatihan from './Dashboard/DashboardPelatihan'; 
+import DashboardPortfolio from "./Dashboard/DashboardPortfolio";
+import DashboardCVGenerator from "./Dashboard/DashboardCVGenerator";
+import DashboardLowongan from "./Dashboard/DashboardLowongan";
 
 function App() {
   return (

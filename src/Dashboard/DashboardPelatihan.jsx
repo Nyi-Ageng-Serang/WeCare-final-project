@@ -45,7 +45,7 @@ function DashboardPelatihan() {
             </div>
           </div>
 
-          {/* Youtube Section */}
+          {/* Gratis Section */}
           <h2 className="text-2xl font-bold mt-10 mb-4">Materi Gratis</h2>
           <div className="bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-[0_10px_10px_rgba(0,0,0,0.35)]">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
