@@ -60,8 +60,8 @@ const NewsSection = () => {
         {/* News Items */}
         <div className="flex overflow-hidden space-x-8 pb-12">
           {newsItems.map((item, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-md w-64 pb-8">
-              <img src={item.image} alt={item.title} className="items-center rounded-t-lg w-full h-40 object-cover mb-4" />
+            <div key={index} className="bg-[#ffecec] rounded-lg shadow-lg w-64 pb-8">
+              <img src={item.image} alt={item.title} className="items-center rounded-t-lg w-full h-48 object-cover mb-4" />
               <h3 className="text-sm font-semibold p-4 mb-2">{item.title}</h3>
               <p className="text-gray-700 px-4 text-sm">{item.description}</p>
             </div>

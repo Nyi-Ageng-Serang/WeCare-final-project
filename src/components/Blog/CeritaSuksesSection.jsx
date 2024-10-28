@@ -38,7 +38,7 @@ const CeritaSuksesSection = () => {
             menikah, punya anak, dua pula," kata Sukma. Oleh karena itu, ia merasa perlu mencari pekerjaan yang tidak hanya melihat latar belakang pendidikan
             atau statusnya. Sukma kemudian menemukan kursus-kursus yang menawarkan . . .
           </p>
-          <a href="#" className="text-[#921A40] font-semibold mt-4 inline-block">
+          <a href="https://journal.revou.co/cerita-sukma/" className="text-[#921A40] font-semibold mt-4 inline-block">
             Baca Lebih Lanjut &gt;&gt;
           </a>
         </div>
