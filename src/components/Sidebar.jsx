@@ -38,11 +38,11 @@ function Sidebar() {
 
       {/* Menu */}
       <nav className="flex-grow mt-10 space-y-4">
-        <MenuItem icon={<FiUser className="w-5 h-5 mx-1" />} label="Profile" to="/profile" isActive={location.pathname === '/profile'} />
-        <MenuItem icon={<MdOutlineStorage className="w-5 h-5 mx-1" />} label="Pelatihan" to="/pelatihan" isActive={location.pathname === '/pelatihan'} />
-        <MenuItem icon={<HiOutlineClipboardDocumentList className="w-5 h-5 mx-1" />} label="Portfolio" to="/portfolio" isActive={location.pathname === '/portfolio'} />
-        <MenuItem icon={<LuFileSignature className="w-5 h-5 mx-1" />} label="CV Generator" to="/cv-generator" isActive={location.pathname === '/cv-generator'} />
-        <MenuItem icon={<BiBriefcase className="w-5 h-5 mx-1" />} label="Lowongan" to="/lowongan" isActive={location.pathname === '/lowongan'} />
+        <MenuItem icon={<FiUser className="w-5 h-5 mx-1" />} label="Profile" to="/dashboard/profile" isActive={location.pathname === '/dashboard/profile'} />
+        <MenuItem icon={<MdOutlineStorage className="w-5 h-5 mx-1" />} label="Pelatihan" to="/dashboard/pelatihan" isActive={location.pathname === '/dashboard/pelatihan'} />
+        <MenuItem icon={<HiOutlineClipboardDocumentList className="w-5 h-5 mx-1" />} label="Portfolio" to="/dashboard/portfolio" isActive={location.pathname === '/dashboard/portfolio'} />
+        <MenuItem icon={<LuFileSignature className="w-5 h-5 mx-1" />} label="CV Generator" to="/dashboard/cvgenerator" isActive={location.pathname === '/dashboard/cvgenerator'} />
+        <MenuItem icon={<BiBriefcase className="w-5 h-5 mx-1" />} label="Lowongan" to="/dashboard/lowongan" isActive={location.pathname === '/dashboard/lowongan'} />
       </nav>
 
       {/* Button Exit */}

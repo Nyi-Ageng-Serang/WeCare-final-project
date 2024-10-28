@@ -1,15 +1,13 @@
 import React from 'react';
-import Sidebar from '../components/Sidebar';
 import { TbEdit } from "react-icons/tb";
 
 function DashboardProfile() {
   return (
     <>
       <div className="flex">
-        <Sidebar /> {/* Memanggil Sidebar */}
-        <div className="flex-grow p-8 ml-72 mr-24"> {/* Mengatur margin kiri sesuai lebar sidebar */}
+        <div className="flex-grow py-5 ml-72 mr-24"> 
           {/* Header Profile */}
-          <h1 className="text-[30pt] font-bold font-sans text-[#921A40]">PROFILE</h1> 
+          <h1 className="text-[24pt] pt-0 font-bold font-sans text-[#921A40]">PROFILE</h1> 
           <br />
           <hr className="border-0 h-px bg-[#921A40]" />
 
