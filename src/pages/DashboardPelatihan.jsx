@@ -2,24 +2,23 @@ import React, { useState } from 'react';
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
 
 function DashboardPelatihan() {
-  // State untuk mengontrol visibility dropdown
+  // State for controlling dropdown visibility
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Fungsi untuk toggle dropdown
+  // Function to toggle dropdown
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
     <>
-      <div className="flex">
-        <div className="flex-grow py-5 ml-72 mr-10">
+      <div className="flex flex-col sm:flex-row">
+        <div className="flex-grow py-5 ml-16 mr-4 sm:ml-16 sm:mr-8 lg:mx-16 lg:ml-72 lg:mr-24">
           {/* Header Pelatihan */}
-          <h1 className="text-[24pt] font-bold font-sans text-[#921A40]">PELATIHAN</h1>
-          <br />
-          <hr className="border-0 h-px bg-[#921A40]" />
+          <h1 className="text-[18pt] sm:text-[20pt] md:text-[22pt] lg:text-[24pt] font-bold font-sans text-[#921A40]">PELATIHAN</h1>
+          <hr className="border-0 h-px bg-[#921A40] mt-6" />
 
-          {/* Deskripsi dan Tombol Panduan Belajar */}
+          {/* Description and Study Guide Button */}
           <div className="mt-6">
             <p className="text-lg">
               Temukan pelatihan yang sesuai dengan hasil tes kamu. Tersedia dua pilihan, pelatihan gratis dan pelatihan premium untuk pengembangan keterampilan yang lebih mendalam. Agar lebih terarah kamu bisa melihat panduan belajarnya terlebih dahulu sebelum mulai belajar. Semangat!
@@ -57,75 +56,56 @@ function DashboardPelatihan() {
             </div>
           </div>
 
-          {/* Course Section Beginner*/}
-          <h2 className="text-2xl font-bold mt-10 mb-4">Course Beginner</h2>
-          <div className="bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-[0_10px_10px_rgba(0,0,0,0.35)]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-              <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="MySkill" />
-              <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="MySkill" />
-              <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="Dicoding" />
-              <CourseCard title="Copywriting Basics" type="Kelas Online" provider="Dicoding" />
+          {/* Course Sections */}
+          {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
+            <div key={level}>
+              <h2 className="text-2xl font-bold mt-10 mb-4">Course Level {level}</h2>
+              <div className="bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-[0_10px_10px_rgba(0,0,0,0.35)]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
+                  <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="MySkill" />
+                  <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="MySkill" />
+                  <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="Dicoding" />
+                  <CourseCard title="Copywriting Basics" type="Kelas Online" provider="Dicoding" />
+                </div>
+              </div>
             </div>
-          </div>
-
-          {/* Course Section Intermediate*/}
-          <h2 className="text-2xl font-bold mt-10 mb-4">Course Intermediate</h2>
-          <div className="bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-[0_10px_10px_rgba(0,0,0,0.35)]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-              <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="MySkill" />
-              <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="MySkill" />
-              <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="Dicoding" />
-              <CourseCard title="Copywriting Basics" type="Kelas Online" provider="Dicoding" />
-            </div>
-          </div>
-
-          {/* Course Section Advanced*/}
-          <h2 className="text-2xl font-bold mt-10 mb-4">Course Advanced</h2>
-          <div className="bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-[0_10px_10px_rgba(0,0,0,0.35)]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-              <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="MySkill" />
-              <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="MySkill" />
-              <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="Dicoding" />
-              <CourseCard title="Copywriting Basics" type="Kelas Online" provider="Dicoding" />
-            </div>
-          </div>
-
+          ))}
         </div>
       </div>
     </>
   );
 }
 
-// VideoCard component untuk menampilkan YouTube cards
+// VideoCard component for displaying YouTube cards
 const VideoCard = ({ title, type, provider }) => (
-  <div className="bg-white p-4 shadow-md rounded-md w-56">
+  <div className="bg-white p-4 shadow-md rounded-md w-full">
     <img
       src="https://via.placeholder.com/150"
       alt={title}
       className="w-full h-32 object-cover mb-2"
     />
     <div className="flex flex-col space-y-3"> 
-    <h3 className="text-base font-semibold text-center">{title}</h3>
-    <div>
-      <p className="text-sm text-gray-500">{type}</p>
-      <p className="text-sm text-gray-500">{provider}</p>
-    </div>
-    <button className="w-full mt-2 bg-[#921A40] text-white px-3 py-1 rounded">
-      Lihat Lebih Lanjut
-    </button>
+      <h3 className="text-base font-semibold text-center">{title}</h3>
+      <div>
+        <p className="text-sm text-gray-500">{type}</p>
+        <p className="text-sm text-gray-500">{provider}</p>
+      </div>
+      <button className="w-full mt-2 bg-[#921A40] text-white px-3 py-1 rounded">
+        Lihat Lebih Lanjut
+      </button>
     </div>
   </div>
 );
 
-// CourseCard component untuk menampilkan  Course cards
+// CourseCard component for displaying Course cards
 const CourseCard = ({ title, type, provider }) => (
-  <div className="bg-white p-4 shadow-md rounded-md w-56">
+  <div className="bg-white p-4 shadow-md rounded-md w-full">
     <img
       src="https://via.placeholder.com/150"
       alt={title}
       className="w-full h-32 object-cover mb-2"
     />
-    <div className="flex flex-col space-y-3"> {/* space-y-3 untuk jarak antar item */}
+    <div className="flex flex-col space-y-3">
       <h3 className="text-base font-semibold text-center">{title}</h3>
       <div>
         <p className="text-sm text-gray-500">{type}</p>
@@ -135,8 +115,6 @@ const CourseCard = ({ title, type, provider }) => (
         Lihat Lebih Lanjut
       </button>
     </div>
-
-    
   </div>
 );
 
