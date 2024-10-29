@@ -31,7 +31,7 @@ function Navbar() {
             </a>
 
             <li className=" hover:text-red">
-              <Link to="/blog">Blog</Link>
+              <Link to="/Blog">Blog</Link>
             </li>
           </div>
 
