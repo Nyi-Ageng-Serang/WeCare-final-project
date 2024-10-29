@@ -26,9 +26,13 @@ function Navbar() {
               <Link to="/About">About</Link>
             </li>
 
-            <li className=" hover:text-red">Comunity</li>
+            <a href="https://bit.ly/FormAnggota-PI" className=" hover:text-red">
+              Comunity
+            </a>
 
-            <li className=" hover:text-red">Blog</li>
+            <li className=" hover:text-red">
+              <Link to="/blog">Blog</Link>
+            </li>
           </div>
 
           {/* Regis & Login */}
@@ -60,11 +64,15 @@ function Navbar() {
           <li className="block py-2 font-semibold text-gray-800 hover:text-red">
             <Link to="/About">About</Link>
           </li>
-          <a className="block py-2 font-semibold text-gray-800 hover:text-red">
+          <a
+            href="https://bit.ly/FormAnggota-PI"
+            target="_blank"
+            className="block py-2 font-semibold text-gray-800 hover:text-red"
+          >
             Comunity
           </a>
           <a className="block py-2 font-semibold text-gray-800 hover:text-red">
-            Blog
+            <Link to="/blog">Blog</Link>
           </a>
           <li className="block py-2 font-semibold border-2 border-red text-red rounded-full text-center mt-4 hover:bg-pink hover:border-pink hover:text-red">
             <Link to="/register"> Masuk</Link>
