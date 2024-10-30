@@ -7,7 +7,7 @@ function Sidebar() {
     <>
       <div className="w-1/4 my-10">
         <button className="bg-softPink text-gray-800 font-semibold w-full py-2 mb-4 rounded-lg shadow-md">
-          <img src={add} alt="" className="inline-block mr-4" />
+          <img src={add} alt="Add button" width={30} className="inline-block mr-4" />
           Posting Diskusi Baru
         </button>
 
