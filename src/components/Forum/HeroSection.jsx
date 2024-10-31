@@ -4,11 +4,11 @@ function Hero() {
   return (
     <>
       <header
-        className="bg-cover bg-center h-80 flex items-center justify-center"
+        className="bg-cover bg-center h-[400px] flex items-center justify-center"
         style={{ backgroundImage: `url(${forum})` }}
       >
         <h1 className="text-white text-3xl font-bold tracking-wide">
-          SELAMAT DATANG DI FORUM DISKUSI
+          Selamat Datang Di Forum Diskusi
         </h1>
       </header>
     </>

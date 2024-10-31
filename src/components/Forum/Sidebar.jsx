@@ -1,13 +1,21 @@
 import add from "../../assets/Add.png";
 
-function Sidebar() {
+function Sidebar({ onOpen }) {
   const topics = ["Freelance", "Tips & Trik", "Life Style", "STEM"];
 
   return (
     <>
       <div className="w-1/4 my-10">
-        <button className="bg-softPink text-gray-800 font-semibold w-full py-2 mb-4 rounded-lg shadow-md">
-          <img src={add} alt="Add button" width={30} className="inline-block mr-4" />
+        <button
+          onClick={onOpen}
+          className="bg-softPink text-gray-800 font-semibold w-full py-2 mb-4 rounded-lg shadow-md"
+        >
+          <img
+            src={add}
+            alt="Add button"
+            width={30}
+            className="inline-block mr-4"
+          />
           Posting Diskusi Baru
         </button>
 

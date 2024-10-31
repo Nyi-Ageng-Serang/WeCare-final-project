@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   return (
     <div className="w-full shadow-sm py-5">
@@ -26,9 +31,26 @@ function Navbar() {
               <Link to="/About">About</Link>
             </li>
 
-            <a href="https://bit.ly/FormAnggota-PI" className=" hover:text-red">
-              Comunity
-            </a>
+            <div className="relative">
+              <button onClick={toggleDropdown}>Comunity</button>
+              {isDropdownOpen && (
+                <div className="absolute w-64 mt-4 bg-backgroud rounded-md shadow-lg z-10">
+                  <ul className="py-1">
+                    <li className="block px-4 py-2 text-gray-800 hover:bg-softPink">
+                      <a
+                        href="https://bit.ly/FormAnggota-PI"
+                        className=" hover:text-red"
+                      >
+                        Perempuan Inovasi
+                      </a>
+                    </li>
+                    <li className="block px-4 py-2 text-gray-800 hover:bg-softPink hover:text-red">
+                      <Link to="/forum">Forum</Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
 
             <li className=" hover:text-red">
               <Link to="/Blog">Blog</Link>

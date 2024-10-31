@@ -13,11 +13,12 @@ import Forum from "./components/Forum/Forum";
 function App() {
   return (
     <div className="bg-backgroud">
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<PageTemplate />}>
           <Route path="/" element={<Homepage />} />
           <Route path="/About" element={<AboutPage />} />
           <Route path="/Blog" element={<BlogPage />} />
+          <Route path="/forum" element={<Forum />} />
         </Route>
 
         <Route path="/login" element={<Login />} />
@@ -25,9 +26,7 @@ function App() {
         <Route path="/tes" element={<Tes />} />
         <Route path="/soal" element={<Soal />} />
         <Route path="/result" element={<Result />} />
-      </Routes> */}
-
-      <Forum/>
+      </Routes>
     </div>
   );
 }
