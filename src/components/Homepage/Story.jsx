@@ -12,7 +12,7 @@ function Story() {
 
           {/* Story Text */}
           <div className="w-full">
-            <small className="inline-block font-bold uppercase text-red bg-softPink border-2 border-pink rounded-full px-6 py-1">
+            <small className="inline-block font-bold uppercase text-red bg-softPink rounded-full px-6 py-2 shadow-md">
               Story
             </small>
 
@@ -27,8 +27,9 @@ function Story() {
               diri untuk kembali berkarier di dunia freelance.
             </p>
             <a
-              href=""
-              className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-pink hover:border-pink hover:text-red"
+              href="https://journal.revou.co/cerita-sukma/"
+              target="_blank"
+              className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red"
             >
               Selengkapnya
             </a>

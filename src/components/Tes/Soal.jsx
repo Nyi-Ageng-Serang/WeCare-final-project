@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { TesContext } from "../../context/TesProvider";
 import Result from "./Result";
 
@@ -39,13 +40,13 @@ function Soal() {
 
   return (
     <form
-      className="container mx-auto my-10 flex justify-center items-center bg-white"
+      className="container mx-auto my-4 flex justify-center items-center bg-white"
       onSubmit={handleSubmit}
     >
-      <div className="w-full max-w-3xl p-6 rounded-lg shadow-lg">
+      <div className="w-full max-w-3xl p-6 mx-4 rounded-lg shadow-lg">
         {tes[0].digitalMarketing.map((soal, soalIndex) => (
           <div key={soalIndex} className="mb-12">
-            <p className="pb-4 font-semibold">{soal.pertanyaan}</p>
+            <p className="pb-4 font-medium">{soal.pertanyaan}</p>
             <div className="space-y-2">
               {soal.pilihan.map((pilihan, pilihanIndex) => (
                 <div key={pilihanIndex}>
@@ -60,9 +61,9 @@ function Soal() {
                       }
                     />
                     <span
-                      className="block p-2 border rounded-lg cursor-pointer transition-color hover:bg-softPink
-                        peer-checked:bg-red 
-                        peer-checked:text-white
+                      className="block p-2 border rounded-lg cursor-pointer transition-color hover:bg-softPink hover:border-softPink
+                        peer-checked:bg-softPink 
+                        peer-checked:text-red
                         peer-checked:border-transparent"
                     >
                       {pilihan.answer}
@@ -76,7 +77,7 @@ function Soal() {
 
         {tes[0].DesainGrafisWithCanva.map((soal, soalIndex) => (
           <div key={soalIndex} className="mb-12">
-            <p className="pb-4 font-semibold">{soal.pertanyaan}</p>
+            <p className="pb-4 font-medium">{soal.pertanyaan}</p>
             <div className="space-y-2">
               {soal.pilihan.map((pilihan, pilihanIndex) => (
                 <div key={pilihanIndex}>
@@ -91,9 +92,9 @@ function Soal() {
                       }
                     />
                     <span
-                      className="block p-2 border rounded-lg cursor-pointer transition-color hover:bg-softPink
-                        peer-checked:bg-red 
-                        peer-checked:text-white
+                      className="block p-2 border rounded-lg cursor-pointer transition-color hover:bg-softPink hover:border-softPink
+                        peer-checked:bg-softPink 
+                        peer-checked:text-red
                         peer-checked:border-transparent"
                     >
                       {pilihan.answer}
@@ -107,7 +108,7 @@ function Soal() {
 
         {tes[0].UIUXDesign.map((soal, soalIndex) => (
           <div key={soalIndex} className="mb-12">
-            <p className="pb-4 font-semibold">{soal.pertanyaan}</p>
+            <p className="pb-4 font-medium">{soal.pertanyaan}</p>
             <div className="space-y-2">
               {soal.pilihan.map((pilihan, pilihanIndex) => (
                 <div key={pilihanIndex}>
@@ -120,9 +121,9 @@ function Soal() {
                       onChange={() => handleSelect("uiuxDesign", pilihan.value)}
                     />
                     <span
-                      className="block p-2 border rounded-lg cursor-pointer transition-color hover:bg-softPink
-                        peer-checked:bg-red 
-                        peer-checked:text-white
+                      className="block p-2 border rounded-lg cursor-pointer transition-color hover:bg-softPink hover:border-softPink
+                        peer-checked:bg-softPink 
+                        peer-checked:text-red
                         peer-checked:border-transparent"
                     >
                       {pilihan.answer}
@@ -136,7 +137,7 @@ function Soal() {
 
         {tes[0].Copywriting.map((soal, soalIndex) => (
           <div key={soalIndex} className="mb-12">
-            <p className="pb-4 font-semibold">{soal.pertanyaan}</p>
+            <p className="pb-4 font-medium">{soal.pertanyaan}</p>
             <div className="space-y-2">
               {soal.pilihan.map((pilihan, pilihanIndex) => (
                 <div key={pilihanIndex}>
@@ -151,9 +152,9 @@ function Soal() {
                       }
                     />
                     <span
-                      className="block p-2 border rounded-lg cursor-pointer transition-color hover:bg-softPink
-                        peer-checked:bg-red 
-                        peer-checked:text-white
+                      className="block p-2 border rounded-lg cursor-pointer transition-color hover:bg-softPink hover:border-softPink
+                        peer-checked:bg-softPink 
+                        peer-checked:text-red
                         peer-checked:border-transparent"
                     >
                       {pilihan.answer}
@@ -168,13 +169,13 @@ function Soal() {
         <div className="flex justify-center gap-10">
           <button
             type="button"
-            className="w-full py-2 bg-[#921a40] text-white font-semibold rounded-md hover:bg-pink hover:text-red transition duration-300"
+            className="w-full py-2 font-semibold border-2 border-red text-red rounded-md text-center hover:bg-softPink hover:border-softPink hover:text-red transition duration-300"
           >
-            Kembali
+            <Link to="/tes">Kembali</Link>
           </button>
           <button
             type="submit"
-            className="w-full py-2 bg-[#921a40] text-white font-semibold rounded-md hover:bg-pink hover:text-red transition duration-300"
+            className="w-full py-2 font-semibold border-2 border-red bg-red text-white rounded-md text-center hover:bg-softPink hover:border-softPink hover:text-red transition duration-300"
           >
             Selesai
           </button>

@@ -41,8 +41,17 @@ function Footer() {
                 <li className="hover:text-red" href="about.html">
                   <Link to="/About">About</Link>
                 </li>
-                <li className=" hover:text-red">Comunity</li>
-                <li className=" hover:text-red">Blog</li>
+                <li className=" hover:text-red">
+                  <a href="https://bit.ly/FormAnggota-PI" target="_blank">
+                    Community
+                  </a>
+                </li>
+                <li className=" hover:text-red">
+                  <Link to="/forum">Forum</Link>
+                </li>
+                <li className=" hover:text-red">
+                  <Link to="/Blog">Blog</Link>
+                </li>
               </div>
             </div>
 
@@ -52,7 +61,7 @@ function Footer() {
               <div className="flex flex-col space-y-3 font-semibold text-gray-800 ">
                 <p>Rekomendasi Pelatihan</p>
                 <p>Lowongan Pekerjaan</p>
-                <p>CV Generator</p>
+                <p>Forum Diskusi</p>
                 <p>Blog Edukasi</p>
               </div>
             </div>

@@ -18,7 +18,7 @@ function Blog() {
           </div>
 
           <div className="flex flex-nowrap lg:flex-row justify-between gap-4 items-start tracking-normal overflow-auto py-4">
-            <div className="border-2 border-softPink flex flex-col items-center justify-center rounded-lg">
+            <div className="flex flex-col items-center justify-center rounded-lg shadow-md">
               <img src={Logo} alt="" />
 
               <div className="p-4 w-64">
@@ -34,7 +34,7 @@ function Blog() {
               </div>
             </div>
 
-            <div className="border-2 border-softPink flex flex-col items-center justify-center rounded-lg">
+            <div className="flex flex-col items-center justify-center rounded-lg shadow-md">
               <img src={Logo} alt="" />
 
               <div className="p-4 w-64">
@@ -50,7 +50,7 @@ function Blog() {
               </div>
             </div>
 
-            <div className="border-2 border-softPink flex flex-col items-center justify-center rounded-lg">
+            <div className="flex flex-col items-center justify-center rounded-lg shadow-md">
               <img src={Logo} alt="" />
 
               <div className="p-4 w-64">
@@ -66,7 +66,7 @@ function Blog() {
               </div>
             </div>
 
-            <div className="border-2 border-softPink flex flex-col items-center justify-center rounded-lg">
+            <div className="flex flex-col items-center justify-center rounded-lg shadow-md">
               <img src={Logo} alt="" />
 
               <div className="p-4 w-64">

@@ -13,8 +13,8 @@ const ForumProvider = ({ children }) => {
         user: "Jessica Casper",
         text: "Lorem ipsum dolor sit amet consectetur",
         details:
-          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, placeat saepe obcaecati doloribus quo sapiente sed dicta labore temporibus accusamus ipsum molestiae ullam dolores adipisci deleniti, recusandae, at libero.",
-        time: "11:02 PM 12 Desember 2023",
+          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, placeat saepe obcaecati doloribus quo sapiente sed dicta labore temporibus accusamus ipsum molestiae ullam dolores adipisci deleniti, recusandae, at libero. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, placeat saepe obcaecati doloribus quo sapiente sed dicta labore temporibus accusamus ipsum molestiae ullam dolores adipisci deleniti, recusandae, at libero.",
+        time: "02/11/2024, 17.25.39",
         comments: [],
       },
       {
@@ -23,8 +23,8 @@ const ForumProvider = ({ children }) => {
         user: "Emma Kazari",
         text: "Lorem ipsum dolor sit amet consectetur",
         details:
-          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, placeat saepe obcaecati doloribus quo sapiente sed dicta labore temporibus accusamus ipsum molestiae ullam dolores adipisci deleniti, recusandae, at libero.",
-        time: "10:42 PM 12 Desember 2023",
+          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, placeat saepe obcaecati doloribus quo sapiente sed dicta labore temporibus accusamus ipsum molestiae ullam dolores adipisci deleniti, recusandae, at libero. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, placeat saepe obcaecati doloribus quo sapiente sed dicta labore temporibus accusamus ipsum molestiae ullam dolores adipisci deleniti, recusandae, at libero.",
+        time: "02/11/2024, 17.25.39",
         comments: [],
       },
       {
@@ -33,8 +33,8 @@ const ForumProvider = ({ children }) => {
         user: "Devin Pane",
         text: "Lorem ipsum dolor sit amet consectetur",
         details:
-          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, placeat saepe obcaecati doloribus quo sapiente sed dicta labore temporibus accusamus ipsum molestiae ullam dolores adipisci deleniti, recusandae, at libero.",
-        time: "10:15 PM 12 Desember 2023",
+          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, placeat saepe obcaecati doloribus quo sapiente sed dicta labore temporibus accusamus ipsum molestiae ullam dolores adipisci deleniti, recusandae, at libero. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, placeat saepe obcaecati doloribus quo sapiente sed dicta labore temporibus accusamus ipsum molestiae ullam dolores adipisci deleniti, recusandae, at libero.",
+        time: "02/11/2024, 17.25.39",
         comments: [],
       },
       {
@@ -43,14 +43,27 @@ const ForumProvider = ({ children }) => {
         user: "Esther Howard",
         text: "Lorem ipsum dolor sit amet consectetur",
         details:
-          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, placeat saepe obcaecati doloribus quo sapiente sed dicta labore temporibus accusamus ipsum molestiae ullam dolores adipisci deleniti, recusandae, at libero.",
-        time: "10:01 PM 12 Desember 2023",
+          "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, placeat saepe obcaecati doloribus quo sapiente sed dicta labore temporibus accusamus ipsum molestiae ullam dolores adipisci deleniti, recusandae, at libero. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta aut, placeat saepe obcaecati doloribus quo sapiente sed dicta labore temporibus accusamus ipsum molestiae ullam dolores adipisci deleniti, recusandae, at libero.",
+        time: "02/11/2024, 17.25.39",
         comments: [],
       },
     ];
 
     setDiscussions(Discussions);
   }, []);
+
+  const addDiscussion = (topic, title, details) => {
+    const newDiscussion = {
+      id: `${discussions.length + 1}`,
+      category: topic,
+      user: "Siapa aja",
+      text: title,
+      details,
+      time: new Date().toLocaleString(),
+      comments: [],
+    };
+    setDiscussions([newDiscussion, ...discussions]);
+  };
 
   const addComment = (discussionId, commentText) => {
     setDiscussions((prevDiscussions) =>
@@ -60,7 +73,11 @@ const ForumProvider = ({ children }) => {
               ...discussion,
               comments: [
                 ...discussion.comments,
-                { user: "Siapa aja", text: commentText },
+                {
+                  user: "Siapa aja",
+                  text: commentText,
+                  time: new Date().toLocaleString(),
+                },
               ],
             }
           : discussion
@@ -69,7 +86,7 @@ const ForumProvider = ({ children }) => {
   };
 
   return (
-    <ForumContext.Provider value={{ discussions, addComment }}>
+    <ForumContext.Provider value={{ discussions, addComment, addDiscussion }}>
       {children}
     </ForumContext.Provider>
   );

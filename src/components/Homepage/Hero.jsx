@@ -8,7 +8,7 @@ function Hero() {
         <div className="flex flex-col lg:flex-row justify-between gap-10 items-center tracking-normal">
           {/* Hero Text */}
           <div className="w-full">
-            <small className="inline-block font-bold uppercase text-red bg-softPink border-2 border-pink rounded-full px-4 py-1">
+            <small className="inline-block font-bold uppercase text-red bg-softPink rounded-full px-6 py-2 shadow-md">
               Welcome to WeCaRe
             </small>
 
@@ -16,7 +16,7 @@ function Hero() {
               Women Career Return
             </h1>
 
-            <p className="mb-8 font-semibold">
+            <p className="mb-8 font-medium">
               Kami hadir untuk membantu perempuan yang mengalami career break
               agar bisa kembali berkarier dengan waktu kerja yang lebih
               fleksibel. Kami percaya bahwa setiap perempuan memiliki potensi
@@ -24,7 +24,7 @@ function Hero() {
               produktif di tengah kesibukan keluarga.
             </p>
 
-            <button className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-pink hover:border-pink hover:text-red">
+            <button className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red">
               <Link to="/About">Selengkapnya</Link>
             </button>
           </div>

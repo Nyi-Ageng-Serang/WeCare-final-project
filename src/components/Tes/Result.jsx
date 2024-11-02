@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function Result({ field, scores }) {
+function Result({ bidang, scores }) {
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#fefdfd] font-poppins tracking-normal">
       <div className="w-full max-w-md bg-white bg-opacity-90 border-2 border-white p-10 rounded-lg shadow-lg">
@@ -8,7 +8,7 @@ function Result({ field, scores }) {
           <h2 className="text-xl font-bold">Hasil Tes</h2>
           <p className="mt-4 text-lg">
             Bidang yang direkomendasikan untuk Kamu adalah:
-            <strong>{field}</strong>
+            <strong>{bidang}</strong>
           </p>
 
           <div className="my-4">

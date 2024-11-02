@@ -1,10 +1,6 @@
 import DiscussionItem from "./DiscussionItem";
-import { useContext } from "react";
-import { ForumContext } from "../../context/ForumProvider";
 
-function DiscussionList() {
-  const { discussions } = useContext(ForumContext);
-
+function DiscussionList({ discussions }) {
   return (
     <>
       <div className="w-full my-10">

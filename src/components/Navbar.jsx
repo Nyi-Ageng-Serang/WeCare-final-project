@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+  // const toggleDropdown = () => {
+  //   setIsDropdownOpen(!isDropdownOpen);
+  // };
 
   return (
     <div className="w-full shadow-sm py-5">
@@ -23,7 +23,7 @@ function Navbar() {
           </div>
 
           {/* Navigation desktop */}
-          <div className="hidden list-none text-lg font-bold lg:flex lg:items-center lg:space-x-10 text-gray-800">
+          <div className="hidden text-lg list-none font-semibold lg:flex lg:items-center lg:space-x-10 tracking-wide">
             <li className=" hover:text-red">
               <Link to="/">Home</Link>
             </li>
@@ -31,7 +31,7 @@ function Navbar() {
               <Link to="/About">About</Link>
             </li>
 
-            <div className="relative">
+            {/* <div className="relative">
               <button onClick={toggleDropdown}>Comunity</button>
               {isDropdownOpen && (
                 <div className="absolute w-64 mt-4 bg-backgroud rounded-md shadow-lg z-10">
@@ -50,8 +50,16 @@ function Navbar() {
                   </ul>
                 </div>
               )}
-            </div>
+            </div> */}
 
+            <li className=" hover:text-red">
+              <a href="https://bit.ly/FormAnggota-PI" target="_blank">
+                Community
+              </a>
+            </li>
+            <li className=" hover:text-red">
+              <Link to="/forum">Forum</Link>
+            </li>
             <li className=" hover:text-red">
               <Link to="/Blog">Blog</Link>
             </li>
@@ -59,11 +67,11 @@ function Navbar() {
 
           {/* Regis & Login */}
           <div>
-            <li className="hidden lg:inline-block font-semibold border-2 border-red text-red py-1 px-6 rounded-full hover:bg-pink hover:border-pink hover:text-red mr-3">
+            <li className="hidden lg:inline-block font-semibold border-2 border-red text-red py-1 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red mr-3">
               <Link to="/register"> Masuk</Link>
             </li>
 
-            <li className="hidden lg:inline-block font-semibold border-2 border-red bg-red text-white py-1 px-6 rounded-full hover:bg-pink hover:border-pink hover:text-red">
+            <li className="hidden lg:inline-block font-semibold border-2 border-red bg-red text-white py-1 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red">
               <Link to="/login">Log In</Link>
             </li>
           </div>
@@ -86,20 +94,21 @@ function Navbar() {
           <li className="block py-2 font-semibold text-gray-800 hover:text-red">
             <Link to="/About">About</Link>
           </li>
-          <a
-            href="https://bit.ly/FormAnggota-PI"
-            target="_blank"
-            className="block py-2 font-semibold text-gray-800 hover:text-red"
-          >
-            Comunity
-          </a>
+          <li className=" block py-2 font-semibold text-gray-800 hover:text-red">
+            <a href="https://bit.ly/FormAnggota-PI" target="_blank">
+              Community
+            </a>
+          </li>
+          <li className=" block py-2 font-semibold text-gray-800 hover:text-red">
+            <Link to="/forum">Forum</Link>
+          </li>
           <a className="block py-2 font-semibold text-gray-800 hover:text-red">
             <Link to="/blog">Blog</Link>
           </a>
-          <li className="block py-2 font-semibold border-2 border-red text-red rounded-full text-center mt-4 hover:bg-pink hover:border-pink hover:text-red">
+          <li className="block py-2 font-semibold border-2 border-red text-red rounded-full text-center mt-4 hover:bg-softPink hover:border-softPink hover:text-red">
             <Link to="/register"> Masuk</Link>
           </li>
-          <li className="block py-2 font-semibold border-2 border-red bg-red text-white rounded-full text-center mt-4 hover:bg-pink hover:border-pink hover:text-red">
+          <li className="block py-2 font-semibold border-2 border-red bg-red text-white rounded-full text-center mt-4 hover:bg-softPink hover:border-softPink hover:text-red">
             <Link to="/login">Log In</Link>
           </li>
         </div>
