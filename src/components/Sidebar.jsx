@@ -32,7 +32,6 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
       <nav className="flex-grow mt-8 space-y-2 px-2">
         <MenuItem icon={<FiUser className="w-4 h-4" />} label="Profile" to="/dashboard/profile" isActive={location.pathname === '/dashboard/profile'} />
         <MenuItem icon={<MdOutlineStorage className="w-4 h-4" />} label="Pelatihan" to="/dashboard/pelatihan" isActive={location.pathname === '/dashboard/pelatihan'} />
-        <MenuItem icon={<HiOutlineClipboardDocumentList className="w-4 h-4" />} label="Portfolio" to="/dashboard/portfolio" isActive={location.pathname === '/dashboard/portfolio'} />
         <MenuItem icon={<LuFileSignature className="w-4 h-4" />} label="CV Generator" to="/dashboard/cvgenerator" isActive={location.pathname === '/dashboard/cvgenerator'} />
         <MenuItem icon={<BiBriefcase className="w-4 h-4" />} label="Lowongan" to="/dashboard/lowongan" isActive={location.pathname === '/dashboard/lowongan'} />
       </nav>

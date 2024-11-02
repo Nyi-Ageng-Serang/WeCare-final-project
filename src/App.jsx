@@ -2,7 +2,6 @@ import { Route, Routes } from "react-router-dom";
 import Dashboard from "./Dashboard/Dashboard";
 import DashboardProfile from './Dashboard/DashboardProfile';  
 import DashboardPelatihan from './Dashboard/DashboardPelatihan'; 
-import DashboardPortfolio from "./Dashboard/DashboardPortfolio";
 import DashboardCVGenerator from "./Dashboard/DashboardCVGenerator";
 import DashboardLowongan from "./Dashboard/DashboardLowongan";
 
@@ -18,7 +17,6 @@ function App() {
           <Route path="profile" element={<DashboardProfile />} />
           <Route path="pelatihan" element={<DashboardPelatihan />} />
           {/* Rute Dashboard lainnya */}
-          <Route path="portfolio" element={<DashboardPortfolio />} />
           <Route path="cvgenerator" element={<DashboardCVGenerator />} />
           <Route path="lowongan" element={<DashboardLowongan />} />
         </Route>
