@@ -40,14 +40,14 @@ function Soal() {
 
   return (
     <form
-      className="container mx-auto my-4 flex justify-center items-center bg-white"
+      className="container mx-auto py-4 flex justify-center items-center"
       onSubmit={handleSubmit}
     >
-      <div className="w-full max-w-3xl p-6 mx-4 rounded-lg shadow-lg">
+      <div className="w-full max-w-3xl p-6 mx-4 bg-[#FFEDED] rounded-lg shadow-lg">
         {tes[0].digitalMarketing.map((soal, soalIndex) => (
           <div key={soalIndex} className="mb-12">
-            <p className="pb-4 font-medium">{soal.pertanyaan}</p>
-            <div className="space-y-2">
+            <p className="pb-6 font-medium">{soal.pertanyaan}</p>
+            <div className="space-y-3">
               {soal.pilihan.map((pilihan, pilihanIndex) => (
                 <div key={pilihanIndex}>
                   <label>
@@ -61,8 +61,8 @@ function Soal() {
                       }
                     />
                     <span
-                      className="block p-2 border rounded-lg cursor-pointer transition-color hover:bg-softPink hover:border-softPink
-                        peer-checked:bg-softPink 
+                      className="block p-2 border rounded-lg cursor-pointer bg-white hover:bg-pink hover:text-red hover:border-softPink
+                        peer-checked:bg-pink
                         peer-checked:text-red
                         peer-checked:border-transparent"
                     >
@@ -92,8 +92,8 @@ function Soal() {
                       }
                     />
                     <span
-                      className="block p-2 border rounded-lg cursor-pointer transition-color hover:bg-softPink hover:border-softPink
-                        peer-checked:bg-softPink 
+                      className="block p-2 border rounded-lg cursor-pointer bg-white hover:bg-pink hover:text-red hover:border-softPink
+                        peer-checked:bg-pink
                         peer-checked:text-red
                         peer-checked:border-transparent"
                     >
@@ -121,8 +121,8 @@ function Soal() {
                       onChange={() => handleSelect("uiuxDesign", pilihan.value)}
                     />
                     <span
-                      className="block p-2 border rounded-lg cursor-pointer transition-color hover:bg-softPink hover:border-softPink
-                        peer-checked:bg-softPink 
+                      className="block p-2 border rounded-lg cursor-pointer bg-white hover:bg-pink hover:text-red hover:border-softPink
+                        peer-checked:bg-pink
                         peer-checked:text-red
                         peer-checked:border-transparent"
                     >
@@ -152,8 +152,8 @@ function Soal() {
                       }
                     />
                     <span
-                      className="block p-2 border rounded-lg cursor-pointer transition-color hover:bg-softPink hover:border-softPink
-                        peer-checked:bg-softPink 
+                      className="block p-2 border rounded-lg cursor-pointer bg-white hover:bg-pink hover:text-red hover:border-softPink
+                        peer-checked:bg-pink
                         peer-checked:text-red
                         peer-checked:border-transparent"
                     >
@@ -169,13 +169,13 @@ function Soal() {
         <div className="flex justify-center gap-10">
           <button
             type="button"
-            className="w-full py-2 font-semibold border-2 border-red text-red rounded-md text-center hover:bg-softPink hover:border-softPink hover:text-red transition duration-300"
+            className="w-full py-2 font-semibold border-2 border-red text-red rounded-md text-center hover:bg-pink hover:border-softPink hover:text-red transition duration-300"
           >
             <Link to="/tes">Kembali</Link>
           </button>
           <button
             type="submit"
-            className="w-full py-2 font-semibold border-2 border-red bg-red text-white rounded-md text-center hover:bg-softPink hover:border-softPink hover:text-red transition duration-300"
+            className="w-full py-2 font-semibold border-2 border-red bg-red text-white rounded-md text-center hover:bg-pink hover:border-softPink hover:text-red transition duration-300"
           >
             Selesai
           </button>
