@@ -12,15 +12,14 @@ import Forum from "./components/Forum/Forum";
 import DiscussionDetail from "./components/Forum/DiscussionDetail";
 
 import Dashboard from "./Dashboard/Dashboard";
-import DashboardProfile from './Dashboard/DashboardProfile';  
-import DashboardPelatihan from './Dashboard/DashboardPelatihan'; 
+import DashboardProfile from "./Dashboard/DashboardProfile";
+import DashboardPelatihan from "./Dashboard/DashboardPelatihan";
 import DashboardCVGenerator from "./Dashboard/DashboardCVGenerator";
 import DashboardLowongan from "./Dashboard/DashboardLowongan";
 
-
 function App() {
   return (
-    <div className="bg-background">
+    <div className="bg-backgroud">
       <Routes>
         <Route path="/" element={<PageTemplate />}>
           <Route path="/" element={<Homepage />} />
@@ -28,15 +27,15 @@ function App() {
           <Route path="/Blog" element={<BlogPage />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/discussions/:id" element={<DiscussionDetail />} />
-          <Route path="/discussions/:id" element={<DiscussionDetail/>} />
+          <Route path="/discussions/:id" element={<DiscussionDetail />} />
+        </Route>
 
-          {/* Rute ke Dashboard dan rute anaknya */}
-          <Route path="/dashboard" element={<Dashboard />}>
-            <Route path="profile" element={<DashboardProfile />} />
-            <Route path="pelatihan" element={<DashboardPelatihan />} />
-            <Route path="cvgenerator" element={<DashboardCVGenerator />} />
-            <Route path="lowongan" element={<DashboardLowongan />} />
-          </Route>
+        {/* Rute ke Dashboard dan rute anaknya */}
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="profile" element={<DashboardProfile />} />
+          <Route path="pelatihan" element={<DashboardPelatihan />} />
+          <Route path="cvgenerator" element={<DashboardCVGenerator />} />
+          <Route path="lowongan" element={<DashboardLowongan />} />
         </Route>
 
         <Route path="/login" element={<Login />} />
