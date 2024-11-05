@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
+import Header from './headerComponent';
 
 function DashboardPelatihan() {
   // State for controlling dropdown visibility
@@ -14,9 +15,7 @@ function DashboardPelatihan() {
     <>
       <div className="flex flex-col sm:flex-row">
         <div className="flex-grow py-5 ml-16 mr-4 sm:ml-16 sm:mr-8 lg:mx-16 lg:ml-72 lg:mr-24">
-          {/* Header Pelatihan */}
-          <h1 className="text-[18pt] sm:text-[20pt] md:text-[22pt] lg:text-[24pt] font-bold font-sans text-[#921A40]">PELATIHAN</h1>
-          <hr className="border-0 h-px bg-[#921A40] mt-6" />
+          <Header title="PELATIHAN" />
 
           {/* Description and Study Guide Button */}
           <div className="mt-6">
@@ -29,7 +28,6 @@ function DashboardPelatihan() {
             >
               Panduan Belajar {isDropdownOpen ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
             </button>
-
             {/* Dropdown Content */}
             <div
               className={`mt-4 p-4 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-500 ease-in-out overflow-hidden ${isDropdownOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
@@ -43,6 +41,7 @@ function DashboardPelatihan() {
                 <li>5. <strong>Jaga Motivasi dan Keseimbangan:</strong> Tetap termotivasi dengan menetapkan tujuan yang realistis dan menjaga keseimbangan antara belajar dan istirahat.</li>
               </ul>
             </div>
+
           </div>
 
           {/* Gratis Section */}

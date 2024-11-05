@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { TbEdit } from "react-icons/tb";
 import { setCookie } from "../components/Cookies";
+import Header from "./headerComponent";
 
 function getCookie(name) {
   const value = `; ${document.cookie}`;
@@ -59,10 +60,7 @@ function DashboardProfile() {
       <div className="flex flex-col lg:flex-row">
         <div className="flex-grow py-5 ml-16 mr-4 sm:ml-16 sm:mr-8 lg:ml-72 lg:mr-24">
           {/* Header Profile */}
-          <h1 className="text-[18pt] sm:text-[20pt] md:text-[22pt] lg:text-[24pt] font-bold font-sans text-[#921A40]">
-            PROFILE
-          </h1>
-          <br />
+          <Header title="PROFILE" />
           <hr className="border-0 h-px bg-[#921A40]" />
 
           {/* Main Content */}
