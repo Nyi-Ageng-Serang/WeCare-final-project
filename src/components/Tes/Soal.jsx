@@ -47,7 +47,9 @@ function Soal() {
         <div className="bg-white w-full max-w-2xl p-6 mx-4 rounded-lg shadow-lg">
           {tes[0].digitalMarketing.map((soal, soalIndex) => (
             <div key={soalIndex} className="mb-12">
-              <p className="pb-6 text-[18px] text-red font-medium">{soal.pertanyaan}</p>
+              <p className="pb-6 text-[18px] text-red font-medium">
+                {soal.pertanyaan}
+              </p>
               <div className="space-y-3">
                 {soal.pilihan.map((pilihan, pilihanIndex) => (
                   <div key={pilihanIndex}>
@@ -79,7 +81,9 @@ function Soal() {
 
           {tes[0].DesainGrafisWithCanva.map((soal, soalIndex) => (
             <div key={soalIndex} className="mb-12">
-              <p className="pb-6 text-[18px] text-red font-medium">{soal.pertanyaan}</p>
+              <p className="pb-6 text-[18px] text-red font-medium">
+                {soal.pertanyaan}
+              </p>
               <div className="space-y-2">
                 {soal.pilihan.map((pilihan, pilihanIndex) => (
                   <div key={pilihanIndex}>
@@ -111,7 +115,9 @@ function Soal() {
 
           {tes[0].UIUXDesign.map((soal, soalIndex) => (
             <div key={soalIndex} className="mb-12">
-              <p className="pb-6 text-[18px] text-red font-medium">{soal.pertanyaan}</p>
+              <p className="pb-6 text-[18px] text-red font-medium">
+                {soal.pertanyaan}
+              </p>
               <div className="space-y-2">
                 {soal.pilihan.map((pilihan, pilihanIndex) => (
                   <div key={pilihanIndex}>
@@ -143,7 +149,9 @@ function Soal() {
 
           {tes[0].Copywriting.map((soal, soalIndex) => (
             <div key={soalIndex} className="mb-12">
-              <p className="pb-6 text-[18px] text-red font-medium">{soal.pertanyaan}</p>
+              <p className="pb-6 text-[18px] text-red font-medium">
+                {soal.pertanyaan}
+              </p>
               <div className="space-y-2">
                 {soal.pilihan.map((pilihan, pilihanIndex) => (
                   <div key={pilihanIndex}>
