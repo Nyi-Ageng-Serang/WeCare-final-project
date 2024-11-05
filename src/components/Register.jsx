@@ -1,29 +1,37 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { setCookie } from "./Cookies";
+import axios from "axios";
 
 function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
 
-  const handleRegister = (e) => {
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleRegister = async (e) => {
     e.preventDefault();
-
-    if (password !== confirmPassword) {
-      alert("pasword dan corfirm password tidak sesuai");
+    // Logic match password and comfirm password
+    if (formData.password !== formData.confirmPassword) {
+      alert("Password dan confirm password tidak sesuai");
       return;
     }
-
-    const user = { email, password };
-    localStorage.setItem("user", JSON.stringify(user));
-
-    const checkData = localStorage.getItem("user");
-    if (checkData) {
-      alert(
-        "Register Berhasil, silahkan login dengan akun yang sudah terdaftar"
+    try {
+      const response = await axios.post(
+        "https://66fb57208583ac93b40b758c.mockapi.io/users",
+        { ...formData, token: "random_token_value" }
       );
+      setCookie("token", response.data.token, 7); // simpan token di cookies selama 7 hari
       navigate("/login");
+    } catch (error) {
+      console.error("Registration failed:", error);
     }
   };
 
@@ -36,13 +44,29 @@ function Register() {
         <form onSubmit={handleRegister}>
           <div className="mb-4">
             <label className="block text-[#230710] font-semibold mb-2">
+              Full Name
+            </label>
+            <input
+              type="text"
+              name="fullName"
+              placeholder="Full Name"
+              value={formData.fullName}
+              onChange={handleInputChange}
+              required
+              className="w-full px-4 py-2 bg-[#ececec] bg-opacity-90 border border-transparent rounded-md focus:outline-none focus:bg-opacity-100 focus:border-[#921a40] transition duration-300"
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block text-[#230710] font-semibold mb-2">
               Email
             </label>
             <input
               type="email"
+              name="email"
               placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={formData.email}
+              onChange={handleInputChange}
               required
               className="w-full px-4 py-2 bg-[#ececec] bg-opacity-90 border border-transparent rounded-md focus:outline-none focus:bg-opacity-100 focus:border-[#921a40] transition duration-300"
             />
@@ -54,9 +78,10 @@ function Register() {
             </label>
             <input
               type="password"
+              name="password"
               placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={formData.password}
+              onChange={handleInputChange}
               required
               className="w-full px-4 py-2 bg-[#ececec] bg-opacity-90 border border-transparent rounded-md focus:outline-none focus:bg-opacity-100 focus:border-[#921a40] transition duration-300"
             />
@@ -68,9 +93,10 @@ function Register() {
             </label>
             <input
               type="password"
+              name="confirmPassword"
               placeholder="Confirm Password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
+              value={formData.confirmPassword}
+              onChange={handleInputChange}
               required
               className="w-full px-4 py-2 bg-[#ececec] bg-opacity-90 border border-transparent rounded-md focus:outline-none focus:bg-opacity-100 focus:border-[#921a40] transition duration-300"
             />
