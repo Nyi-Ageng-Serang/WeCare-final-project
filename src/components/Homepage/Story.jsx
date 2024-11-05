@@ -24,7 +24,7 @@ function Story() {
               Yuk, simak kisah inspiratif para perempuan hebat yang berhasil
               menyeimbangkan karier dan keluarga. Temukan bagaimana mereka
               bekerja dengan waktu fleksibel, sehingga kamu bisa lebih percaya
-              diri untuk kembali berkarier di dunia freelance.
+              diri untuk kembali berkarier.
             </p>
             <a
               href="https://journal.revou.co/cerita-sukma/"

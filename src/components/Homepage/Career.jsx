@@ -13,16 +13,15 @@ function Career() {
             </small>
 
             <h1 className="text-3xl text-gray-800 font-bold mb-4 mt-6">
-              Mulai Perjalanan Karirmu dengan tes Bakat Minat
+              Mulai Perjalanan Karirmu dengan tes Minat Bakat
             </h1>
 
             <p className="mb-8 font-semibold">
-              Tes ini akan membantu kamu mendapatkan gambaran tentang bakat dan
-              minat yang kamu miliki. Berdasarkan hasil tes, kami akan
-              memberikan rekomendasi bidang pekerjaan yang paling cocok untuk
-              kamu. Setelah itu kamu akan diarahkan ke dashboard untuk mengakses
-              rekomendasi pelatihan dan sumber daya karir lainnya seperti
-              panduan CV, portfolio, tips interview, dan personal branding.
+              Tes ini akan membantu kamu mendapatkan gambaran tentang minat dan
+              bakat yang kamu miliki. Berdasarkan hasil tes, kami akan
+              memberikan rekomendasi bidang pekerjaan fleksibel yang paling
+              cocok untuk kamu. Setelah tes selsai, kamu bisa mengakses sumber
+              daya pelatihan untuk mengasah skillmu.
             </p>
 
             <button className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red">
