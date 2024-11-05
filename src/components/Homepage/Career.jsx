@@ -25,7 +25,7 @@ function Career() {
             </p>
 
             <button className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red">
-              <Link to="/tes">Ikuti tes Bakat Minat</Link>
+              <Link to="/tes">Ikuti tes Minat Bakat</Link>
             </button>
           </div>
 

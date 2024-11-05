@@ -37,7 +37,7 @@ function Result({ scores }) {
   }
 
   const handleDashboardClick = () => {
-    navigate("/dashboard/pelatihan", { state: { recommendedCategory } });
+    navigate("/dashboard/pelatihan", { state: { recommendation } });
   };
 
   const handleBackClick = () => {
@@ -45,17 +45,17 @@ function Result({ scores }) {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen tracking-normal">
-      <div className="w-full max-w-3xl m-2 bg-[#FFEDED] md:p-10 p-4 rounded-lg shadow-lg">
+    <div className="flex justify-center items-center min-h-screen bg-softPink tracking-normal">
+      <div className="w-full max-w-2xl m-2 bg-white md:p-10 p-4 rounded-lg shadow-lg">
         <div className="mb-10 text-center">
           <img
-            src={tesSelesai}
-            width={200}
-            alt="Tes Selesai"
-            className="m-auto"
-          />
-          <h2 className="text-lg font-bold text-center mb-6 text-[#230710]">
-            Hasil Tes Bakat Minat Karier
+              src={tesSelesai}
+              width={200}
+              alt="Tes Selesai"
+              className="m-auto"
+            />
+          <h2 className="text-lg font-bold text-center mb-6 text-red">
+            Hasil Tes Minat Bakat Karier
           </h2>
           <p className="font-semibold">
             Bidang yang direkomendasikan untuk Kamu adalah:
