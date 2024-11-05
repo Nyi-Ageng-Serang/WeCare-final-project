@@ -22,22 +22,12 @@ function Result({ bidang, scores }) {
     navigate("/dashboard/pelatihan", { state: { recommendation } });
   };
 
-  const handleBackClick = () => {
-    navigate(-1); // Navigates to the previous page
-  };
-
   return (
-    <div className="flex justify-center items-center min-h-screen tracking-normal">
-      <div className="w-full max-w-3xl m-2 bg-[#FFEDED] md:p-10 p-4 rounded-lg shadow-lg">
+    <div className="flex justify-center items-center min-h-screen bg-softPink tracking-normal">
+      <div className="w-full max-w-2xl m-2 bg-white md:p-10 p-4 rounded-lg shadow-lg">
         <div className="mb-10 text-center">
-          <img
-            src={tesSelesai}
-            width={200}
-            alt="Tes Selesai"
-            className="m-auto"
-          />
-          <h2 className="text-lg font-bold text-center mb-8 text-[#230710]">
-            Hasil Tes Bakat Minat Karier
+          <h2 className="text-lg font-bold text-center mb-8 text-red">
+            Hasil Tes Minat Bakat Karier
           </h2>
 
           <p className="font-semibold ">{recommendation}</p>
@@ -55,22 +45,21 @@ function Result({ bidang, scores }) {
           </div> */}
 
           <p className="my-10 font-semibold">
-            silahkan akses dashboard untuk melihat rekomendasi pelatihan dan
-            sumber daya karir lainnya
+            Akses dashboard untuk melihat rekomendasi pelatihan
           </p>
         </div>
 
         <div className="flex justify-center gap-10">
           <button
             type="button"
-            className="w-full py-2 font-semibold border-2 border-red text-red rounded-md text-center hover:bg-pink hover:border-softPink hover:text-red transition duration-200"
+            className="w-full py-2 font-semibold border-2 border-red text-red rounded-md hover:bg-softPink hover:border-softPink hover:text-red"
           >
             <Link to="/">Kembali</Link>
           </button>
           <button
             type="submit"
             onClick={handleDashboardClick}
-            className="w-full py-2 font-semibold border-2 border-red bg-red text-white rounded-md text-center hover:bg-pink hover:border-softPink hover:text-red transition duration-200"
+            className="w-full py-2 font-semibold border-2 border-red bg-red text-white rounded-md hover:bg-softPink hover:border-softPink hover:text-red"
           >
             Dashboard
           </button>
