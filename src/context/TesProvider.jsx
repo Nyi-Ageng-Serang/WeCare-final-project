@@ -8,103 +8,108 @@ function TesProvider({ children }) {
       digitalMarketing: [
         {
           pertanyaan:
-            "Bagaimana kamu melihat peran data dalam merencanakan strategi pemasaran?",
+            "Bagaimana perasaanmu saat mengelola akun media sosial dan berinteraksi dengan orang secara online?",
           pilihan: [
             {
               answer:
-                "Sangat penting, data membantu menentukan langkah yang tepat",
+                "Sangat suka dan merasa nyaman berkomunikasi secara online",
               value: 4,
             },
             {
-              answer: "Penting, meski saya masih belajar memanfaatkannya",
+              answer: "Cukup suka, meski masih belum terbiasa",
               value: 3,
             },
             {
-              answer:
-                "Cukup penting, tapi lebih suka menebak berdasarkan pengalaman",
+              answer: "Kadang nyaman, tapi lebih suka komunikasi langsung",
               value: 2,
             },
             {
-              answer:
-                "Tidak terlalu penting, lebih suka pendekatan kreatif daripada berbasis data",
+              answer: "Tidak suka dan merasa kurang nyaman berinteraksi online",
               value: 1,
             },
           ],
         },
         {
           pertanyaan:
-            "Jika kamu diminta untuk meningkatkan keterlibatan di media sosial, apa pendekatan utamamu?",
+            "Jika kamu perlu mempromosikan sebuah acara atau produk, apa yang akan kamu lakukan?",
           pilihan: [
             {
-              answer: "Membuat konten yang relevan dan menarik bagi audiens",
+              answer: "Menyusun strategi promosi yang terencana dan efektif",
               value: 4,
             },
             {
-              answer:
-                "Memanfaatkan media sosial untuk menjangkau lebih banyak orang",
-              value: 3,
-            },
-            { answer: "Menggunakan promosi dari mulut ke mulut", value: 2 },
-            {
-              answer: "Tidak terlalu yakin apa yang harus dilakukan",
-              value: 1,
-            },
-          ],
-        },
-        {
-          pertanyaan:
-            "Seberapa sering kamu mengikuti tren pemasaran digital atau algoritma terbaru?",
-          pilihan: [
-            {
-              answer:
-                "Sangat sering, saya senang belajar hal-hal baru di bidang ini",
-              value: 4,
-            },
-            { answer: "Cukup sering, meskipun kadang ketinggalan", value: 3 },
-            { answer: "Kadang-kadang, hanya saat merasa perlu", value: 2 },
-            { answer: "Jarang atau tidak pernah", value: 1 },
-          ],
-        },
-        {
-          pertanyaan:
-            "Apa pendapatmu tentang memasang iklan berbayar (paid ads) untuk kampanye pemasaran?",
-          pilihan: [
-            {
-              answer: "Sangat efektif, terutama jika ditargetkan dengan baik",
-              value: 4,
-            },
-            {
-              answer:
-                "Cukup efektif, tapi perlu dipadukan dengan strategi organik",
+              answer: "Menggunakan media sosial untuk menyebarkan informasi",
               value: 3,
             },
             {
-              answer: "Kadang efektif, tetapi lebih suka promosi organik",
+              answer:
+                "Lebih mengandalkan promosi tradisional atau bertemu langsung",
               value: 2,
             },
             {
-              answer:
-                "Tidak terlalu efektif, saya tidak menyukai iklan berbayar",
+              answer: "Kurang tertarik atau merasa tidak yakin",
               value: 1,
             },
           ],
         },
         {
           pertanyaan:
-            "Bagaimana perasaanmu tentang membuat rencana konten yang terstruktur untuk media sosial atau email marketing?",
+            "Seberapa tertarik kamu dalam membuat konten kreatif seperti desain visual atau storytelling?",
           pilihan: [
             {
+              answer: "Sangat tertarik dan punya banyak ide kreatif",
+              value: 4,
+            },
+            { answer: "Cukup tertarik, kadang muncul beberapa ide", value: 3 },
+            {
               answer:
-                "Suka, karena rencana konten membantu mencapai tujuan pemasaran",
+                "Tertarik, tapi biasanya butuh bantuan dalam mengembangkan ide",
+              value: 2,
+            },
+            {
+              answer: "Tidak terlalu tertarik atau merasa sulit menemukan ide",
+              value: 1,
+            },
+          ],
+        },
+        {
+          pertanyaan:
+            "Seberapa sering kamu melihat statistik atau data untuk memahami performa konten di media sosial?",
+          pilihan: [
+            {
+              answer: "Sering sekali, dan suka menganalisis hasilnya",
               value: 4,
             },
             {
-              answer: "Cukup suka, meskipun butuh latihan untuk terbiasa",
+              answer: "Cukup sering, dan merasa data tersebut sangat membantu",
               value: 3,
             },
-            { answer: "Agak sulit, tapi bisa diusahakan", value: 2 },
             {
-              answer: "Tidak suka dan merasa tidak yakin bagaimana membuatnya",
+              answer:
+                "Kadang-kadang, walau belum terlalu paham cara membacanya",
+              value: 2,
+            },
+            {
+              answer: "Jarang atau tidak pernah melihat data performa",
+              value: 1,
+            },
+          ],
+        },
+        {
+          pertanyaan:
+            "Bagaimana perasaanmu saat mengikuti tren atau perubahan algoritma baru di media sosial?",
+          pilihan: [
+            {
+              answer: "Sangat antusias dan selalu ingin update",
+              value: 4,
+            },
+            {
+              answer: "Cukup tertarik, tapi butuh waktu untuk beradaptasi",
+              value: 3,
+            },
+            { answer: "Kadang merasa kesulitan mengikuti perubahan", value: 2 },
+            {
+              answer: "Kurang tertarik atau sering merasa kewalahan",
               value: 1,
             },
           ],
