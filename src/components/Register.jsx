@@ -23,12 +23,22 @@ function Register() {
       alert("Password dan confirm password tidak sesuai");
       return;
     }
+
     try {
       const response = await axios.post(
         "https://66fb57208583ac93b40b758c.mockapi.io/users",
         { ...formData, token: "random_token_value" }
       );
+      const currentDate = new Date().toLocaleDateString("id-ID", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+      
       setCookie("token", response.data.token, 7); // simpan token di cookies selama 7 hari
+      setCookie("fullName", formData.fullName, 7); // simpan nama pengguna di cookies
+      localStorage.setItem("tanggalBergabung", currentDate, 7); // simpan tanggal bergabung local strorage
+      
       navigate("/login");
     } catch (error) {
       console.error("Registration failed:", error);
