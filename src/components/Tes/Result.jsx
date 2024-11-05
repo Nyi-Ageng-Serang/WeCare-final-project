@@ -1,25 +1,43 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import tesSelesai from "../../assets/tes selesai.png";
-import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-function Result({ bidang, scores }) {
-  const [recommendation, setRecommendation] = useState("");
-  const recommendations = {
-    digitalMarketing: `Berdasarkan hasil tes, kamu memiliki minat dan bakat yang kuat dalam Digital Marketing. Pertimbangkan untuk mempelajari lebih lanjut tentang strategi pemasaran digital. Kamu bisa mulai dengan mengikuti kursus online dan mengaplikasikan pengetahuanmu dengan mengelola akun media sosial untuk memperkuat pemahaman kamu`,
-    desainGrafisWithCanva:
-      "Hasil tes menunjukkan bahwa kamu memiliki minat yang tinggi dalam Desain Grafis. Canva adalah alat yang cocok untuk memulai. Pertimbangkan untuk mengambil kursus desain grafis dan berlatih membuat berbagai materi visual untuk meningkatkan keterampilan kamu.",
-    uiuxDesign:
-      "Hasil tes menunjukkan bahwa kamu tertarik pada UI/UX Desain. Mulailah dengan mempelajari dasar-dasar UI/UX, termasuk riset pengguna, wireframing, dan prototyping. Kamu bisa mengikuti kursus UI/UX dan berlatih membuat desain antarmuka sederhana untuk meningkatkan keterampilan kamu. Pertimbangkan juga untuk membangun portofolio agar dapat menunjukkan karya kamu kepada calon klien atau perusahaan.",
-    copywriting: `Kamu menunjukkan minat yang besar dalam Copywriting. Mulailah dengan menulis artikel, blog, atau konten untuk situs web. Pertimbangkan untuk mengikuti kursus menulis atau bergabung dengan komunitas penulis untuk mendapatkan umpan balik dan meningkatkan keterampilan kamu.`,
-  };
+function Result({ scores }) {
+  const [recommendedCategory, setRecommendedCategory] = useState("");
+  const [recommendationText, setRecommendationText] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    setRecommendation(recommendations[bidang] || "Bidang tidak ditemukan.");
-  }, [bidang, recommendations]);
+    determineRecommendation();
+  }, [scores]);
+
+  function determineRecommendation() {
+    const { digitalMarketing, desainGrafisWithCanva, uiuxDesign, copywriting } = scores;
+    const highestScore = Math.max(digitalMarketing, desainGrafisWithCanva, uiuxDesign, copywriting);
+    
+    let category = "";
+    let recommendation = "";
+
+    if (highestScore === digitalMarketing) {
+      category = "Digital Marketing";
+      recommendation = "Berdasarkan hasil tes, kamu memiliki minat dan bakat yang kuat dalam mengelola Digital Marketing dan media sosial. Pertimbangkan untuk mempelajari lebih lanjut tentang manajemen akun media sosial, pembuatan konten, dan strategi pemasaran digital. kamu dapat mulai dengan kursus online atau bergabung dengan komunitas profesional di bidang ini.";
+    } else if (highestScore === desainGrafisWithCanva) {
+      category = "Graphic Design";
+      recommendation = "Hasil tes kamu menunjukkan bahwa kamu memiliki minat yang tinggi dalam desain grafis. Canva adalah alat yang sangat baik untuk memulai. Pertimbangkan untuk mengambil kursus desain grafis dan berlatih membuat berbagai materi visual untuk meningkatkan keterampilan kamu.";
+    } else if (highestScore === uiuxDesign) {
+      category = "UI/UX Design";
+      recommendation = "Kamu tampaknya memiliki minat yang kuat dalam desain UI/UX. Ini adalah bidang yang sangat berharga, terutama dalam industri teknologi. Pertimbangkan untuk belajar lebih dalam tentang prinsip desain UI/UX dan pengalaman pengguna.";
+    } else if (highestScore === copywriting) {
+      category = "Content CopyWriting";
+      recommendation = "Kamu menunjukkan minat yang besar dalam menulis konten. Mulailah dengan menulis artikel, blog, atau konten untuk situs web. Pertimbangkan untuk mengikuti kursus menulis atau bergabung dengan kelompok penulis untuk mendapatkan umpan balik dan meningkatkan keterampilan kamu.";
+    }
+
+    setRecommendedCategory(category);
+    setRecommendationText(recommendation);
+  }
 
   const handleDashboardClick = () => {
-    navigate("/dashboard/pelatihan", { state: { recommendation } });
+    navigate("/dashboard/pelatihan", { state: { recommendedCategory } });
   };
 
   const handleBackClick = () => {
@@ -36,44 +54,34 @@ function Result({ bidang, scores }) {
             alt="Tes Selesai"
             className="m-auto"
           />
-          <h2 className="text-lg font-bold text-center mb-8 text-[#230710]">
+          <h2 className="text-lg font-bold text-center mb-6 text-[#230710]">
             Hasil Tes Bakat Minat Karier
           </h2>
-
-          <p className="font-semibold ">{recommendation}</p>
-
-          {/* <div className="my-4">
-            <h3 className="text-xl font-semibold">Skor:</h3>
-            <ul className="list-disc list-inside">
-              <li>Digital Marketing: {scores.digitalMarketing}</li>
-              <li>
-                Desain Grafis dengan Canva: {scores.desainGrafisWithCanva}
-              </li>
-              <li>UI/UX Design: {scores.uiuxDesign}</li>
-              <li>Copywriting: {scores.copywriting}</li>
-            </ul>
-          </div> */}
-
-          <p className="my-10 font-semibold">
-            silahkan akses dashboard untuk melihat rekomendasi pelatihan dan
-            sumber daya karir lainnya
+          <p className="font-semibold">
+            Bidang yang direkomendasikan untuk Kamu adalah:
+            <strong> {recommendedCategory}</strong>
           </p>
-        </div>
+          <p className="mt-2">{recommendationText}</p>
 
-        <div className="flex justify-center gap-10">
-          <button
-            type="button"
-            className="w-full py-2 font-semibold border-2 border-red text-red rounded-md text-center hover:bg-pink hover:border-softPink hover:text-red transition duration-200"
-          >
-            <Link to="/">Kembali</Link>
-          </button>
-          <button
-            type="submit"
-            onClick={handleDashboardClick}
-            className="w-full py-2 font-semibold border-2 border-red bg-red text-white rounded-md text-center hover:bg-pink hover:border-softPink hover:text-red transition duration-200"
-          >
-            Dashboard
-          </button>
+          <p className="my-4">
+            Silahkan akses dashboard untuk melihat rekomendasi pelatihan dan sumber daya karir lainnya.
+          </p>
+
+          <div className="flex justify-center gap-10">
+            <button
+              type="button"
+              className="w-full py-2 font-semibold border-2 border-red text-red rounded-md text-center hover:bg-pink hover:border-softPink hover:text-red transition duration-200"
+            >
+              <Link to="/" onClick={handleBackClick}>Kembali</Link>
+            </button>
+            <button
+              type="button"
+              onClick={handleDashboardClick}
+              className="w-full py-2 font-semibold border-2 border-red bg-red text-white rounded-md text-center hover:bg-pink hover:border-softPink hover:text-red transition duration-200"
+            >
+              Dashboard
+            </button>
+          </div>
         </div>
       </div>
     </div>

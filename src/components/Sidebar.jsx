@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logoWecare from '../assets/image/logoWecare.png';
 import { FiUser, FiLogOut } from 'react-icons/fi';
-import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { BiBriefcase } from "react-icons/bi";
 import { MdOutlineStorage } from "react-icons/md";
 import { LuFileSignature } from "react-icons/lu";
@@ -19,6 +18,12 @@ const MenuItem = ({ icon, label, to, isActive }) => (
 
 function Sidebar({ sidebarOpen, setSidebarOpen }) {
   const location = useLocation();
+  const navigate = useNavigate(); //Impor useNavigate dan tentukan navigasi
+
+  //fungsi untuk menangani klik tombol
+  const handleBackClick = () => {
+    navigate("/");
+  };
 
   return (
     <aside
@@ -38,7 +43,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
       <button
         className="flex items-center space-x-4 py-3 px-4 bg-[#921A40] text-white hover:bg-opacity-80 transition duration-300 ease-in-out rounded-br-[2rem] shadow-[0_10px_20px_rgba(0,0,0,0.3)] mt-auto"
-        onClick={() => setSidebarOpen(false)}
+        onClick={handleBackClick} 
       >
         <FiLogOut className="w-4 h-4" />
         <span className="text-base font-semibold">Kembali</span>

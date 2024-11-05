@@ -1,118 +1,120 @@
-import React, { useState } from 'react';
-import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
+import React, { useState, useEffect } from 'react';
+import { useLocation } from "react-router-dom";
 import Header from './headerComponent';
+import Dropdown from './DropdownComponent';
+import axios from 'axios';
 
 function DashboardPelatihan() {
-  // State for controlling dropdown visibility
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const location = useLocation();
+  const recommendedCategory = location.state?.recommendedCategory || '';
 
-  // Function to toggle dropdown
+  const [courses, setCourses] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(recommendedCategory); 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  useEffect(() => {
+    axios.get('https://671f9010e7a5792f052eb5f4.mockapi.io/Pelatihan/pelatihan')
+      .then(response => {
+        setCourses(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
+  // Memfilter kursus berdasarkan kategori yang dipilih
+  const filteredCourses = selectedCategory
+    ? courses.filter(course => course.category === selectedCategory)
+    : []; // Jika tidak ada kategori yang dipilih, set filter menjadi array kosong
+
   return (
-    <>
-      <div className="flex flex-col sm:flex-row">
-        <div className="flex-grow py-5 ml-16 mr-4 sm:ml-16 sm:mr-8 lg:mx-16 lg:ml-72 lg:mr-24">
-          <Header title="PELATIHAN" />
+    <div className="flex flex-col sm:flex-row">
+      <div className="flex-grow py-5 ml-16 mr-4 sm:ml-16 sm:mr-8 lg:mx-16 lg:ml-72 lg:mr-24">
+        <Header title="PELATIHAN" />
+        
+        <Dropdown
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          toggleDropdown={toggleDropdown}
+          isDropdownOpen={isDropdownOpen}
+        />
 
-          {/* Description and Study Guide Button */}
-          <div className="mt-6">
-            <p className="text-lg">
-              Temukan pelatihan yang sesuai dengan hasil tes kamu. Tersedia dua pilihan, pelatihan gratis dan pelatihan premium untuk pengembangan keterampilan yang lebih mendalam. Agar lebih terarah kamu bisa melihat panduan belajarnya terlebih dahulu sebelum mulai belajar. Semangat!
-            </p>
-            <button 
-              onClick={toggleDropdown} 
-              className="w-full mt-4 bg-[#921A40] text-white text-left text-lg px-6 py-2 rounded-lg flex items-center justify-between"
-            >
-              Panduan Belajar {isDropdownOpen ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
-            </button>
-            {/* Dropdown Content */}
-            <div
-              className={`mt-4 p-4 bg-white rounded-lg shadow-lg border border-gray-200 transition-all duration-500 ease-in-out overflow-hidden ${isDropdownOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
-            >
-              <h3 className="text-xl font-semibold text-[#921A40]">Panduan Sukses Belajar</h3>
-              <ul className="mt-2 space-y-2">
-                <li>1. <strong>Mulai dengan Pemahaman Dasar:</strong> Kuasai konsep-konsep dasar untuk membangun fondasi yang kuat.</li>
-                <li>2. <strong>Latihan Teratur:</strong> Terapkan materi yang telah dipelajari secara langsung melalui latihan harian.</li>
-                <li>3. <strong>Tingkatkan dengan Sumber Tambahan:</strong> Ikuti kursus lanjutan atau baca literatur tambahan untuk memperdalam pengetahuan.</li>
-                <li>4. <strong>Evaluasi Kemajuan:</strong> Buat catatan perkembangan dan evaluasi hasil latihan secara berkala.</li>
-                <li>5. <strong>Jaga Motivasi dan Keseimbangan:</strong> Tetap termotivasi dengan menetapkan tujuan yang realistis dan menjaga keseimbangan antara belajar dan istirahat.</li>
-              </ul>
-            </div>
-
+        {/* Bagian Kursus Gratis */}
+        <h2 className="text-2xl font-bold mt-10 mb-4">Materi Gratis</h2>
+        <div className="bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-[0_10px_10px_rgba(0,0,0,0.35)]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
+            {filteredCourses.length > 0 ? (
+              filteredCourses
+                .filter(course => course.level === "Gratis")
+                .map(course => (
+                  <CourseCard
+                    key={course.kelas_id}
+                    imageUrl={course.image_url}
+                    title={course.category}
+                    type={course.type}
+                    provider={course.provider}
+                    registrationUrl={course.registration_url}
+                  />
+                ))
+            ) : (
+              <p className="col-span-full text-center text-gray-600">Tidak ada Course ditemukan.</p>
+            )}
           </div>
+        </div>
 
-          {/* Gratis Section */}
-          <h2 className="text-2xl font-bold mt-10 mb-4">Materi Gratis</h2>
-          <div className="bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-[0_10px_10px_rgba(0,0,0,0.35)]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-              <VideoCard title="CopyWriter" type="Playlist" provider="Copywriting Youtube" />
-              <VideoCard title="CopyWriter" type="Playlist" provider="Copywriting Youtube" />
-              <VideoCard title="CopyWriter" type="Playlist" provider="Copywriting Youtube" />
-              <VideoCard title="CopyWriter" type="Playlist" provider="Copywriting Youtube" />
-            </div>
-          </div>
-
-          {/* Course Sections */}
-          {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
-            <div key={level}>
-              <h2 className="text-2xl font-bold mt-10 mb-4">Course Level {level}</h2>
-              <div className="bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-[0_10px_10px_rgba(0,0,0,0.35)]">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-                  <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="MySkill" />
-                  <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="MySkill" />
-                  <CourseCard title="Copywriting Introduction" type="Kelas Online" provider="Dicoding" />
-                  <CourseCard title="Copywriting Basics" type="Kelas Online" provider="Dicoding" />
-                </div>
+        {/* Bagian Kursus Lainnya */}
+        {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
+          <div key={level}>
+            <h2 className="text-2xl font-bold mt-10 mb-4">Level Kursus {level}</h2>
+            <div className="bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-[0_10px_10px_rgba(0,0,0,0.35)]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
+                {filteredCourses.length > 0 ? (
+                  filteredCourses
+                    .filter(course => course.level === level)
+                    .map(course => (
+                      <CourseCard
+                        key={course.kelas_id}
+                        imageUrl={course.image_url}
+                        title={course.category}
+                        type={course.type}
+                        provider={course.provider}
+                        registrationUrl={course.registration_url}
+                      />
+                    ))
+                ) : (
+                  <p className="col-span-full text-center text-gray-600">Tidak ada Course ditemukan.</p>
+                )}
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 }
 
-// VideoCard component for displaying YouTube cards
-const VideoCard = ({ title, type, provider }) => (
+const CourseCard = ({ imageUrl, title, type, provider, registrationUrl }) => (
   <div className="bg-white p-4 shadow-md rounded-md w-full">
     <img
-      src="https://via.placeholder.com/150"
-      alt={title}
-      className="w-full h-32 object-cover mb-2"
-    />
-    <div className="flex flex-col space-y-3"> 
-      <h3 className="text-base font-semibold text-center">{title}</h3>
-      <div>
-        <p className="text-sm text-gray-500">{type}</p>
-        <p className="text-sm text-gray-500">{provider}</p>
-      </div>
-      <button className="w-full mt-2 bg-[#921A40] text-white px-3 py-1 rounded">
-        Lihat Lebih Lanjut
-      </button>
-    </div>
-  </div>
-);
-
-// CourseCard component for displaying Course cards
-const CourseCard = ({ title, type, provider }) => (
-  <div className="bg-white p-4 shadow-md rounded-md w-full">
-    <img
-      src="https://via.placeholder.com/150"
+      src={imageUrl}
       alt={title}
       className="w-full h-32 object-cover mb-2"
     />
     <div className="flex flex-col space-y-3">
       <h3 className="text-base font-semibold text-center">{title}</h3>
       <div>
-        <p className="text-sm text-gray-500">{type}</p>
+        <p className="text-sm text-gray-500">{type}</p> 
         <p className="text-sm text-gray-500">{provider}</p>
       </div>
-      <button className="w-full bg-[#921A40] text-white px-3 py-1 rounded">
-        Lihat Lebih Lanjut
-      </button>
+      <a href={registrationUrl} target="_blank" rel="noopener noreferrer">
+        <button className="w-full bg-[#921A40] text-white px-3 py-1 rounded">
+          Lihat Lebih Lanjut
+        </button>
+      </a>
     </div>
   </div>
 );
