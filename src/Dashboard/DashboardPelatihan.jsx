@@ -9,15 +9,15 @@ function DashboardPelatihan() {
   const recommendedCategory = location.state?.recommendedCategory || '';
 
   const [courses, setCourses] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(recommendedCategory); 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
+  const [selectedCategory, setSelectedCategory] = useState(recommendedCategory);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
   useEffect(() => {
-    axios.get('https://671f9010e7a5792f052eb5f4.mockapi.io/Pelatihan/pelatihan')
+    axios.get('https://substantial-starla-ardhilla-fa22d60a.koyeb.app/trainings')
       .then(response => {
         setCourses(response.data);
       })
@@ -26,16 +26,15 @@ function DashboardPelatihan() {
       });
   }, []);
 
-  // Memfilter kursus berdasarkan kategori yang dipilih
   const filteredCourses = selectedCategory
     ? courses.filter(course => course.category === selectedCategory)
-    : []; // Jika tidak ada kategori yang dipilih, set filter menjadi array kosong
+    : [];
 
   return (
     <div className="flex flex-col sm:flex-row">
       <div className="flex-grow py-5 ml-16 mr-4 sm:ml-16 sm:mr-8 lg:mx-16 lg:ml-72 lg:mr-24">
         <Header title="PELATIHAN" />
-        
+
         <Dropdown
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
