@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import story from "../../assets/story (2).png";
 
 function Story() {
@@ -27,8 +28,7 @@ function Story() {
               diri untuk kembali berkarier.
             </p>
             <a
-              href="https://journal.revou.co/cerita-sukma/"
-              target="_blank"
+              href="/sukma"
               className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red"
             >
               Selengkapnya
