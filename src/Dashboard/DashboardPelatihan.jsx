@@ -11,18 +11,22 @@ function DashboardPelatihan() {
   const [courses, setCourses] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(recommendedCategory);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [loading, setLoading] = useState(true); // Loading state
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
   useEffect(() => {
+    setLoading(true);
     axios.get('https://substantial-starla-ardhilla-fa22d60a.koyeb.app/trainings')
       .then(response => {
         setCourses(response.data);
+        setLoading(false);
       })
       .catch(error => {
         console.error("Error fetching data:", error);
+        setLoading(false);
       });
   }, []);
 
@@ -42,38 +46,20 @@ function DashboardPelatihan() {
           isDropdownOpen={isDropdownOpen}
         />
 
-        {/* Bagian Kursus Gratis */}
-        <h2 className="text-2xl font-bold mt-10 mb-4">Materi Gratis</h2>
-        <div className="bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-[0_10px_10px_rgba(0,0,0,0.35)]">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
-            {filteredCourses.length > 0 ? (
-              filteredCourses
-                .filter(course => course.level === "Gratis")
-                .map(course => (
-                  <CourseCard
-                    key={course.kelas_id}
-                    imageUrl={course.image_url}
-                    title={course.category}
-                    type={course.type}
-                    provider={course.provider}
-                    registrationUrl={course.registration_url}
-                  />
-                ))
-            ) : (
-              <p className="col-span-full text-center text-gray-600">Tidak ada Course ditemukan.</p>
-            )}
+        {/* Spinner when loading */}
+        {loading ? (
+          <div className="flex justify-center items-center h-64">
+            <div className="loader border-t-4 border-b-4 border-gray-800 rounded-full w-12 h-12 animate-spin"></div>
           </div>
-        </div>
-
-        {/* Bagian Kursus Lainnya */}
-        {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
-          <div key={level}>
-            <h2 className="text-2xl font-bold mt-10 mb-4">Level Kursus {level}</h2>
+          ) : (
+          <>
+            {/* Bagian Kursus Gratis */}
+            <h2 className="text-2xl font-bold mt-10 mb-4">Materi Gratis</h2>
             <div className="bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-[0_10px_10px_rgba(0,0,0,0.35)]">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
                 {filteredCourses.length > 0 ? (
                   filteredCourses
-                    .filter(course => course.level === level)
+                    .filter(course => course.level === "Gratis")
                     .map(course => (
                       <CourseCard
                         key={course.kelas_id}
@@ -89,8 +75,35 @@ function DashboardPelatihan() {
                 )}
               </div>
             </div>
-          </div>
-        ))}
+
+            {/* Bagian Kursus Lainnya */}
+            {['Beginner', 'Intermediate', 'Advanced'].map((level) => (
+              <div key={level}>
+                <h2 className="text-2xl font-bold mt-10 mb-4">Level Kursus {level}</h2>
+                <div className="bg-[#FFB1B1] bg-opacity-40 p-6 rounded-lg shadow-[0_10px_10px_rgba(0,0,0,0.35)]">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-4">
+                    {filteredCourses.length > 0 ? (
+                      filteredCourses
+                        .filter(course => course.level === level)
+                        .map(course => (
+                          <CourseCard
+                            key={course.kelas_id}
+                            imageUrl={course.image_url}
+                            title={course.category}
+                            type={course.type}
+                            provider={course.provider}
+                            registrationUrl={course.registration_url}
+                          />
+                        ))
+                    ) : (
+                      <p className="col-span-full text-center text-gray-600">Tidak ada Course ditemukan.</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </>
+        )}
       </div>
     </div>
   );
