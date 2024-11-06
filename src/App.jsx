@@ -17,6 +17,7 @@ import DashboardPelatihan from "./Dashboard/DashboardPelatihan";
 import DashboardCVGenerator from "./Dashboard/DashboardCVGenerator";
 import DashboardLowongan from "./Dashboard/DashboardLowongan";
 import StoryPage from "./components/Homepage/StoryPage";
+import PartnerPage from "./components/Partner/PartnerPage";
 
 function App() {
   return (
@@ -24,14 +25,14 @@ function App() {
       <Routes>
         <Route path="/" element={<PageTemplate />}>
           <Route path="/" element={<Homepage />} />
-          <Route path="/sukma" element={<StoryPage/>}/>
+          <Route path="/sukma" element={<StoryPage />} />
           <Route path="/About" element={<AboutPage />} />
+          <Route path="/partner" element={<PartnerPage />} />
           <Route path="/Blog" element={<BlogPage />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/discussions/:id" element={<DiscussionDetail />} />
           <Route path="/discussions/:id" element={<DiscussionDetail />} />
         </Route>
-        
 
         {/* Rute ke Dashboard dan rute anaknya */}
         <Route path="/dashboard" element={<Dashboard />}>
