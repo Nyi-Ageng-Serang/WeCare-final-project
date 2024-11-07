@@ -24,7 +24,7 @@ function Partner() {
               href="/partner"
               className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red"
             >
-              Gabung Partner Wecare
+              Selengkapnya
             </a>
           </div>
 

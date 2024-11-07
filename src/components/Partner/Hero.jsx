@@ -18,7 +18,8 @@ function HeroPartner() {
             </p>
 
             <a
-              href=""
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfVmoH8akEP2XyBOtcWaiHQBS9CimiUUFiW45FL-GK3_Y6Rgg/viewform"
+              target="_balnk"
               className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red"
             >
               Gabung Partner Wecare
