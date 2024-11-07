@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { setCookie } from "./Cookies";
 import axios from "axios";
 
 function Register() {
@@ -18,12 +17,12 @@ function Register() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+
+    // Check if passwords match
     if (formData.password !== formData.confirmPassword) {
       alert("Password dan confirm password tidak sesuai");
       return;
     }
-
-    console.log(formData);
 
     try {
       const response = await axios.post(
@@ -37,17 +36,24 @@ function Register() {
         { headers: { "Content-Type": "application/json" } }
       );
 
-      if (response.data.token) {
-        setCookie("token", response.data.token, 7); // Save token in cookies
-        navigate("/login");
+      console.log("Server response:", response.data);
+
+      if (response.status === 200 || response.status === 201) {
+        alert("Registration successful! Redirecting to login page...");
+        navigate("/login"); // Arahkan ke halaman login
       } else {
-        alert("Registration failed. Please try again.");
+        alert(
+          response.data.message || "Registration failed. Please try again."
+        );
       }
     } catch (error) {
-      console.error("Registration failed:", error.response ? error.response.data : error.message);
-      alert(error.response && error.response.data.message ? error.response.data.message : "An error occurred during registration.");
-   }
+      alert(
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : "An error occurred during registration."
+      );
     }
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-[#ffcaf4] font-poppins">
