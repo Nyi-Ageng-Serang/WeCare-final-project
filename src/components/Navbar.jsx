@@ -69,7 +69,7 @@ function Navbar() {
 
               {/* Dropdown Menu */}
               {dropdownOpen && (
-                <div className="absolute right-0 mt-3 w-48 font-semibold bg-white border border-gray-100 rounded-md shadow-lg">
+                <div className="absolute right-0 mt-3 w-48 font-semibold bg-white border border-gray-100 rounded-md shadow-lg z-20">
                   <Link
                     to="/dashboard/profile"
                     className="block px-4 py-2 hover:bg-softPink hover:text-red"

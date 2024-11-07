@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import Header from './headerComponent';
 import Dropdown from './DropdownComponent';
 import axios from 'axios';
+import Banner from './Banner';
 
 function DashboardPelatihan() {
   const location = useLocation();
@@ -37,7 +38,9 @@ function DashboardPelatihan() {
   return (
     <div className="flex flex-col sm:flex-row">
       <div className="flex-grow py-5 ml-16 mr-4 sm:ml-16 sm:mr-8 lg:mx-16 lg:ml-72 lg:mr-24">
-        <Header title="PELATIHAN" />
+        <Header title="PELATIHAN" /><br />
+
+        <Banner />
 
         <Dropdown
           selectedCategory={selectedCategory}
