@@ -20,22 +20,21 @@ function Result({ scores }) {
 
     if (highestScore === digitalMarketing) {
       category = "Digital Marketing";
-      recommendation = "Berdasarkan hasil tes, kamu memiliki minat dan bakat yang kuat dalam mengelola Digital Marketing dan media sosial...";
+      recommendation = "Berdasarkan hasil tes, kamu memiliki minat dan bakat yang kuat dalam Digital Marketing. Pertimbangkan untuk mempelajari lebih lanjut tentang strategi pemasaran digital. Kamu bisa mulai dengan mengikuti kursus online dan mengaplikasikan pengetahuanmu dengan mengelola akun media sosial untuk memperkuat pemahaman kamu";
     } else if (highestScore === desainGrafisWithCanva) {
       category = "Desain Grafis";
-      recommendation = "Hasil tes kamu menunjukkan bahwa kamu memiliki minat yang tinggi dalam desain grafis...";
+      recommendation = "Hasil tes menunjukkan bahwa kamu memiliki minat yang tinggi dalam Desain Grafis. Canva adalah alat yang cocok untuk memulai. Pertimbangkan untuk mengambil kursus desain grafis dan berlatih membuat berbagai materi visual untuk meningkatkan keterampilan kamu.";
     } else if (highestScore === uiuxDesign) {
       category = "UI/UX Design";
-      recommendation = "Kamu tampaknya memiliki minat yang kuat dalam desain UI/UX...";
+      recommendation = "Hasil tes menunjukkan bahwa kamu tertarik pada UI/UX Desain. Mulailah dengan mempelajari dasar-dasar UI/UX, termasuk riset pengguna, wireframing, dan prototyping. Kamu bisa mengikuti kursus UI/UX dan berlatih membuat desain antarmuka sederhana untuk meningkatkan keterampilan kamu. Pertimbangkan juga untuk membangun portofolio agar dapat menunjukkan karya kamu kepada calon klien atau perusahaan.";
     } else if (highestScore === copywriting) {
-      category = "CopyWriting";
-      recommendation = "Kamu menunjukkan minat yang besar dalam menulis konten...";
+      category = "Copywriting";
+      recommendation = "Kamu menunjukkan minat yang besar dalam Copywriting. Mulailah dengan menulis artikel, blog, atau konten untuk situs web. Pertimbangkan untuk mengikuti kursus menulis atau bergabung dengan komunitas penulis untuk mendapatkan umpan balik dan meningkatkan keterampilan kamu.";
     }
 
     setRecommendedCategory(category);
     setRecommendationText(recommendation);
 
-    // Simpan category ke localStorage
     localStorage.setItem("recommendedCategory", category);
   }
 
@@ -47,9 +46,9 @@ function Result({ scores }) {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-softPink tracking-normal">
-      <div className="w-full max-w-2xl m-2 bg-white md:p-10 p-4 rounded-lg shadow-lg">
+      <div className="w-full max-w-3xl m-2 bg-white md:p-10 p-4 rounded-lg shadow-lg">
         <div className="mb-10 text-center">
-          <img src={tesSelesai} width={200} alt="Tes Selesai" className="m-auto" />
+          <img src={tesSelesai} width={150} alt="Tes Selesai" className="m-auto" />
           <h2 className="text-lg font-bold text-center mb-6 text-red">
             Hasil Tes Minat Bakat Karier
           </h2>

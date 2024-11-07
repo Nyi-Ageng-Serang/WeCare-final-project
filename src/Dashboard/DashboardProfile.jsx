@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { TbEdit } from "react-icons/tb";
 import { setCookie } from "../components/Cookies";
 import Header from "./headerComponent";
+import RecomenDesk from "./RecomenDesk";
 
 function getCookie(name) {
   const value = `; ${document.cookie}`;
@@ -156,16 +157,9 @@ function DashboardProfile() {
             </div>
           </div>
 
-          {/* Job Description Section */}
-          <div className="mt-8 bg-[#FFB1B1] bg-opacity-40 p-4 lg:p-6 rounded-lg shadow-lg">
-            <p className="font-semibold text-sm sm:text-base md:text-lg">
-              Copywriting adalah pekerjaan yang melibatkan penulisan teks atau
-              konten untuk tujuan pemasaran atau promosi...
-            </p>
-            {/* ... lanjutkan deskripsi lainnya */}
-          </div>
+          {/* Recommendation Deskripsi Section */}
+          <RecomenDesk category={recommendedCategory} />
 
-          
         </div>
       </div>
     </>
