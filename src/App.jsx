@@ -18,6 +18,7 @@ import DashboardCVGenerator from "./Dashboard/DashboardCVGenerator";
 import DashboardLowongan from "./Dashboard/DashboardLowongan";
 import StoryPage from "./components/Homepage/StoryPage";
 import PartnerPage from "./components/Partner/PartnerPage";
+import BlogDetail from "./components/Homepage/BlogDetail";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/About" element={<AboutPage />} />
           <Route path="/partner" element={<PartnerPage />} />
           <Route path="/Blog" element={<BlogPage />} />
+          <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/discussions/:id" element={<DiscussionDetail />} />
           <Route path="/discussions/:id" element={<DiscussionDetail />} />
