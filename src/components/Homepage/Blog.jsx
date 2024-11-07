@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-import Logo from "../../assets/logoWecare.png";
 import { BlogContext } from "../../context/BlogProvider";
 import { useNavigate } from "react-router-dom";
 
@@ -72,6 +71,9 @@ function Blog() {
                 </div>
               </div>
             ))}
+            <div className=" text-semibold font-semibold rounded-lg content-center p-4">
+              <a href="/Blog"><i class="fas fa-arrow-right text-red text-3xl"></i></a>
+            </div>
           </div>
         </div>
       </div>
