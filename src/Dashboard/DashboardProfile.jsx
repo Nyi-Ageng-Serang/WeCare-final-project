@@ -17,18 +17,20 @@ function DashboardProfile() {
     bergabungSejak: "-",
   });
   const [isEditing, setIsEditing] = useState(false);
+  const [recommendedCategory, setRecommendedCategory] = useState("");
 
   useEffect(() => {
     const savedNama = getCookie("fullName") || "-";
-    const savedDurasiJedaKarier =
-      localStorage.getItem("durasiJedaKarier") || "";
+    const savedDurasiJedaKarier = localStorage.getItem("durasiJedaKarier") || "";
     const savedBergabungSejak = localStorage.getItem("tanggalBergabung") || "-";
+    const savedRecommendedCategory = localStorage.getItem("recommendedCategory") || "Belum ada rekomendasi";
 
     setProfileData({
       nama: savedNama,
       durasiJedaKarier: savedDurasiJedaKarier,
       bergabungSejak: savedBergabungSejak,
     });
+    setRecommendedCategory(savedRecommendedCategory);
   }, []);
 
   const handleInputDurasi = (e) => {
@@ -72,9 +74,6 @@ function DashboardProfile() {
                 alt="Profile"
                 className="h-40 w-32 sm:h-48 sm:w-36 md:h-60 md:w-44 lg:h-[248px] lg:w-[190px] rounded-lg object-cover shadow-md"
               />
-              <button className="absolute bottom-2 right-0 bg-[#921A40] text-white p-2 rounded-full shadow-lg">
-                <TbEdit size={24} />
-              </button>
             </div>
 
             {/* Profile Info */}
@@ -153,7 +152,7 @@ function DashboardProfile() {
               Berdasarkan Hasil Test Minat Bakat Kamu cenderung cocok dibidang
             </p>
             <div className="bg-[#921A40] text-white text-center py-2 rounded-lg shadow-md text-sm sm:text-base">
-              Copywriting
+              {recommendedCategory}
             </div>
           </div>
 
@@ -161,61 +160,12 @@ function DashboardProfile() {
           <div className="mt-8 bg-[#FFB1B1] bg-opacity-40 p-4 lg:p-6 rounded-lg shadow-lg">
             <p className="font-semibold text-sm sm:text-base md:text-lg">
               Copywriting adalah pekerjaan yang melibatkan penulisan teks atau
-              konten untuk tujuan pemasaran atau promosi. Tujuan utamanya adalah
-              untuk menarik perhatian audiens, memengaruhi mereka, dan mendorong
-              mereka melakukan tindakan tertentu, seperti membeli produk,
-              mendaftar layanan, atau mengikuti sebuah kampanye. Copywriting
-              bisa ditemukan di berbagai bentuk konten, seperti iklan, brosur,
-              website, media sosial, dan email marketing.
+              konten untuk tujuan pemasaran atau promosi...
             </p>
-            <br />
-            <p className="text-sm sm:text-base md:text-lg">
-              Kerja seorang copywriter mencakup:
-            </p>
-            <ul className="list-decimal ml-6 mt-4 space-y-2 text-sm sm:text-base md:text-lg">
-              <li>
-                Riset: Memahami target audiens, produk, dan pesaing untuk
-                mengetahui apa yang akan menarik perhatian mereka.
-              </li>
-              <li>
-                Menulis konten: Membuat teks yang menarik, persuasif, dan sesuai
-                dengan kebutuhan klien atau perusahaan, baik untuk iklan,
-                website, atau kampanye digital.
-              </li>
-              <li>
-                Mengedit dan Merevisi: Meninjau dan memperbaiki konten untuk
-                memastikan pesan yang disampaikan jelas, tepat, dan bebas dari
-                kesalahan. Proses ini juga melibatkan penyesuaian gaya penulisan
-                agar sesuai dengan identitas merek.
-              </li>
-              <li>
-                Strategi Pemasaran: Bekerja sama dengan tim pemasaran untuk
-                merancang strategi komunikasi yang efektif. Copywriter harus
-                mampu menciptakan pesan yang sejalan dengan tujuan pemasaran dan
-                meningkatkan visibilitas merek.
-              </li>
-              <li>
-                Analisis Kinerja: Memantau dan menganalisis hasil kampanye yang
-                telah diluncurkan untuk mengevaluasi efektivitas konten. Dengan
-                memanfaatkan data dan umpan balik, seorang copywriter dapat
-                menyesuaikan strategi dan menciptakan konten yang lebih baik di
-                masa mendatang.
-              </li>
-              <li>
-                Kreativitas dan Inovasi: Menciptakan ide-ide segar dan inovatif
-                untuk menarik perhatian audiens di tengah persaingan yang ketat.
-                Copywriter harus mampu berpikir di luar kebiasaan dan
-                menghasilkan konten yang unik serta menarik.
-              </li>
-              <li>
-                Kolaborasi: Bekerja sama dengan desainer grafis, fotografer, dan
-                tim pemasaran lainnya untuk memastikan konten tidak hanya
-                menarik secara teks, tetapi juga visual. Kolaborasi yang baik
-                akan meningkatkan daya tarik keseluruhan dari kampanye
-                pemasaran.
-              </li>
-            </ul>
+            {/* ... lanjutkan deskripsi lainnya */}
           </div>
+
+          
         </div>
       </div>
     </>

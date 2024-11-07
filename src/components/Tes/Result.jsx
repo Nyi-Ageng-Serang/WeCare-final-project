@@ -28,12 +28,15 @@ function Result({ scores }) {
       category = "UI/UX Design";
       recommendation = "Kamu tampaknya memiliki minat yang kuat dalam desain UI/UX...";
     } else if (highestScore === copywriting) {
-      category = "Content CopyWriting";
+      category = "CopyWriting";
       recommendation = "Kamu menunjukkan minat yang besar dalam menulis konten...";
     }
 
     setRecommendedCategory(category);
     setRecommendationText(recommendation);
+
+    // Simpan category ke localStorage
+    localStorage.setItem("recommendedCategory", category);
   }
 
   const handleDashboardClick = () => {
