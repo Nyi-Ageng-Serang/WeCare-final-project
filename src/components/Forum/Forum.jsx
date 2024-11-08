@@ -1,3 +1,4 @@
+// Forum.jsx
 import React, { useState, useContext } from "react";
 import { ForumContext } from "../../context/ForumProvider";
 import Hero from "./HeroSection";
@@ -33,4 +34,4 @@ function Forum() {
   );
 }
 
-export default Forum;
+export default Forum;  // Make sure this line exists for the default export

@@ -33,11 +33,11 @@ function Discussion() {
         const response = await axios.get(
           "https://substantial-starla-ardhilla-fa22d60a.koyeb.app/forum/posts"
         );
-        
+
         // Menyaring dan mengubah data yang diterima, termasuk kategori
-        const formattedDiscussions = response.data.posts.map(post => {
+        const formattedDiscussions = response.data.posts.map((post) => {
           // Mencocokkan ID kategori
-          const category = categories.find(cat => cat._id === post.category);
+          const category = categories.find((cat) => cat._id === post.category);
 
           return {
             id: post._id,
@@ -63,7 +63,7 @@ function Discussion() {
       fetchDiscussions();
     }
   }, [categories]); // Menjalankan efek ini setiap kali data kategori berubah
-
+  
   return (
     <div className="w-full lg:w-3/4 my-10">
       <Searchbar />
