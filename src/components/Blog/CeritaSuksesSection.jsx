@@ -10,7 +10,7 @@ const CeritaSuksesSection = () => {
           <i className="fas fa-comment-dots"></i>
         </div>
         <h2 className="text-[#921A40] text-3xl md:text-3xl font-black">
-          CERITA SUKSES DARI SOBAT WeCare
+          Career Rerurn Story
         </h2>
       </div>
 
@@ -34,9 +34,7 @@ const CeritaSuksesSection = () => {
             Sebelumnya, Sukma pernah bekerja sebagai Project Management Officer. Namun, dari tahun 2018-2024, Sukma memutuskan untuk Career Break
             selama 6 tahun untuk sepenuhnya mengurus rumah tangga. Ibu dari dua anak ini merasa bahwa otaknya perlu "diasah" agar tidak tumpul. Selain itu,
             bekerja juga merupakan "me time" yang berharga baginya. "Aku mau bekerja karena aku mau otakku kepakai. Sebelumnya, Sukma sudah beberapa kali
-            mencoba melamar pekerjaan namun tidak berhasil. "Kupikir-pikir karena salah satu tantangan perempuan cari kerja di Indonesia itu udah perempuan,
-            menikah, punya anak, dua pula," kata Sukma. Oleh karena itu, ia merasa perlu mencari pekerjaan yang tidak hanya melihat latar belakang pendidikan
-            atau statusnya. Sukma kemudian menemukan kursus-kursus yang menawarkan . . .
+            mencoba melamar pekerjaan namun tidak berhasil . . .
           </p>
           <a href="https://journal.revou.co/cerita-sukma/" className="text-[#921A40] font-semibold mt-4 inline-block">
             Baca Lebih Lanjut &gt;&gt;

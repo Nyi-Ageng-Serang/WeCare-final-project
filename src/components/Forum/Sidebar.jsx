@@ -45,7 +45,7 @@ function Sidebar({ onOpen, onSelectTopic }) {
 
         <ul className="space-y-3">
           {loading ? (
-            <li>Loading topics...</li>
+            <li className="min-h-screen">Loading topics...</li>
           ) : (
             topics.length > 0 ? (
               topics.map((topic, index) => (

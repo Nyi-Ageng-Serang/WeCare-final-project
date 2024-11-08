@@ -48,7 +48,7 @@ const Faq = () => {
   ];
 
   return (
-    <div className="w-full py-6 my-16">
+    <div className="w-full py-6 my-10">
       <div className="container mx-auto px-8">
         <h1 className="text-3xl font-bold text-center mb-8">
           Frequently Asked Questions

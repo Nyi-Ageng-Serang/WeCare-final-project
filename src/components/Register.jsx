@@ -56,7 +56,7 @@ function Register() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#ffcaf4] font-poppins">
+    <div className="flex justify-center items-center min-h-screen font-poppins">
       <div className="w-full max-w-sm bg-white bg-opacity-90 mx-2 p-10 rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-6 text-[#230710]">
           Register

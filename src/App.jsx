@@ -33,7 +33,6 @@ function App() {
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/forum" element={<Forum />} />
           <Route path="/discussions/:id" element={<DiscussionDetail />} />
-          <Route path="/discussions/:id" element={<DiscussionDetail />} />
         </Route>
 
         {/* Rute ke Dashboard dan rute anaknya */}
