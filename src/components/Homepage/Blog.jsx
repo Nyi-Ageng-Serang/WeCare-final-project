@@ -27,9 +27,9 @@ function Blog() {
   return (
     <>
       <div className="w-full py-6 my-6">
-        <div className="container mx-auto py-10 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center my-4">
-            <h1 className="text-2xl font-bold my-4">Berita Terbaru</h1>
+            <h1 className="text-2xl font-bold my-4">Artikel Terbaru</h1>
             <div>
               <button
                 onClick={handlePrev}
@@ -60,7 +60,7 @@ function Blog() {
                   alt=""
                   className="w-full h-48 object-cover rounded-lg shadow-md transition duration-500 ease-in-out"
                 />
-                <div className="bg-softPink p-4 min-h-[220px] flex flex-col justify-between rounded-b-lg">
+                <div className="bg-softPink p-4 lg:min-h-[230px] min-h-[260px] flex flex-col justify-between rounded-b-lg">
                   <h3 className="text-lg font-semibold my-2">{blog.title}</h3>
                   <p className="text-sm text-gray-700">
                     {blog.content.substring(0, 100)}...
@@ -72,7 +72,9 @@ function Blog() {
               </div>
             ))}
             <div className=" text-semibold font-semibold rounded-lg content-center p-4">
-              <a href="/Blog"><i class="fas fa-arrow-right text-red text-3xl"></i></a>
+              <a href="/Blog">
+                <i class="fas fa-arrow-right text-red text-3xl"></i>
+              </a>
             </div>
           </div>
         </div>
