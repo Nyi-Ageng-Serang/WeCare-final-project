@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { setCookie } from "./Cookies";
 import axios from "axios";
 
 function Register() {
@@ -18,7 +17,8 @@ function Register() {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    // Logic match password and comfirm password
+
+    // Check if passwords match
     if (formData.password !== formData.confirmPassword) {
       alert("Password dan confirm password tidak sesuai");
       return;
@@ -26,27 +26,37 @@ function Register() {
 
     try {
       const response = await axios.post(
-        "https://66fb57208583ac93b40b758c.mockapi.io/users",
-        { ...formData, token: "random_token_value" }
+        "https://substantial-starla-ardhilla-fa22d60a.koyeb.app/auth/register",
+        {
+          fullName: formData.fullName,
+          email: formData.email,
+          password: formData.password,
+          confirmPassword: formData.confirmPassword,
+        },
+        { headers: { "Content-Type": "application/json" } }
       );
-      const currentDate = new Date().toLocaleDateString("id-ID", {
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-      });
-      
-      setCookie("token", response.data.token, 7); // simpan token di cookies selama 7 hari
-      setCookie("fullName", formData.fullName, 7); // simpan nama pengguna di cookies
-      localStorage.setItem("tanggalBergabung", currentDate, 7); // simpan tanggal bergabung local strorage
-      
-      navigate("/login");
+
+      console.log("Server response:", response.data);
+
+      if (response.status === 200 || response.status === 201) {
+        alert("Registration successful! Redirecting to login page...");
+        navigate("/login"); // Arahkan ke halaman login
+      } else {
+        alert(
+          response.data.message || "Registration failed. Please try again."
+        );
+      }
     } catch (error) {
-      console.error("Registration failed:", error);
+      alert(
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : "An error occurred during registration."
+      );
     }
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-[#fefdfd] font-poppins">
+    <div className="flex justify-center items-center min-h-screen bg-[#ffcaf4] font-poppins">
       <div className="w-full max-w-sm bg-white bg-opacity-90 mx-2 p-10 rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center mb-6 text-[#230710]">
           Register
