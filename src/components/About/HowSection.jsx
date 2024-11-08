@@ -16,10 +16,9 @@ function HowSection() {
           <div className="p-4 bg-softPink shadow-md border-l-4 border-red rounded-lg">
             <p>
               Setelah menyelesaikan tes, kami akan merekomendasikan pelatihan
-              yang sesuai dengan bakat dan minatmu untuk membantu mengasah
-              keterampilan dan mempelajari hal baru. Kamu juga akan mendapatkan
-              akses ke berbagai sumber daya karier, seperti CV generator dan
-              lowongan kerja dari partner WeCare.
+              relevan yang terhubung langsung dengan perusahaan, sesuai dengan
+              bakat dan minatmu. Kamu juga akan mendapatkan akses ke lowongan
+              kerja dari partner WeCare.
             </p>
           </div>
         </div>

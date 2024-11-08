@@ -27,7 +27,7 @@ function HeroPartner() {
           </div>
 
           {/* Partner Image */}
-          <div className="lg:w-5/6 md:w-3/4 h-auto ">
+          <div className="lg:w-5/6 md:w-full h-auto ">
             <img src={partner} alt="Women Career Return" className="rounded-lg" />
           </div>
         </div>

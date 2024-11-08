@@ -117,7 +117,7 @@ function DiscussionDetail() {
   };
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <h1 className="min-h-screen">Loading...</h1>;
   }
 
   if (!discussion) {
