@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import story from "../../assets/story (2).png";
 
 function Story() {
@@ -12,7 +13,7 @@ function Story() {
 
           {/* Story Text */}
           <div className="w-full">
-            <small className="inline-block font-bold uppercase text-red bg-softPink border-2 border-pink rounded-full px-6 py-1">
+            <small className="inline-block font-bold uppercase text-red bg-softPink rounded-full px-6 py-2 shadow-md">
               Story
             </small>
 
@@ -24,11 +25,11 @@ function Story() {
               Yuk, simak kisah inspiratif para perempuan hebat yang berhasil
               menyeimbangkan karier dan keluarga. Temukan bagaimana mereka
               bekerja dengan waktu fleksibel, sehingga kamu bisa lebih percaya
-              diri untuk kembali berkarier di dunia freelance.
+              diri untuk kembali berkarier.
             </p>
             <a
-              href=""
-              className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-pink hover:border-pink hover:text-red"
+              href="/sukma"
+              className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red"
             >
               Selengkapnya
             </a>

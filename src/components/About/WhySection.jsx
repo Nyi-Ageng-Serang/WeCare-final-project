@@ -13,8 +13,8 @@ function WhySection() {
             <p className="mb-4 mt-6 font-semibold">
               Setiap orang punya minat dan keahlian unik, namun sering kali
               belum yakin di mana bakat kita sebenarnya. Tes minat dan bakat
-              kami membantu kamu menemukan bidang freelance yang sesuai,
-              sehingga kamu bisa memilih pekerjaan yang tidak hanya
+              kami membantu kamu menemukan bidang pekerjaan fleksibel yang
+              sesuai, sehingga kamu bisa memilih pekerjaan yang tidak hanya
               menghasilkan, tapi juga sesuai dengan minatmu.
             </p>
 

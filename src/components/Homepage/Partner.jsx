@@ -7,11 +7,11 @@ function Partner() {
         <div className="flex flex-col lg:flex-row justify-between gap-10 items-center tracking-normal">
           {/* Partner Text */}
           <div className="w-full">
-            <small className="inline-block font-bold uppercase text-red bg-softPink border-2 border-pink rounded-full px-6 py-1">
+            <small className="inline-block font-bold uppercase text-red bg-softPink rounded-full px-6 py-2 shadow-md">
               Partner
             </small>
 
-            <h1 className="text-2xl font-bold  mb-4 mt-6">
+            <h1 className="text-2xl font-bold mb-4 mt-6">
               Bersama untuk Mendukung Perempuan Kembali Berkarier!
             </h1>
             <p className="mb-8 font-semibold">
@@ -21,10 +21,10 @@ function Partner() {
             </p>
 
             <a
-              href=""
-              className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-pink hover:border-pink hover:text-red"
+              href="/partner"
+              className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red"
             >
-              Gabung Partner Wecare
+              Selengkapnya
             </a>
           </div>
 

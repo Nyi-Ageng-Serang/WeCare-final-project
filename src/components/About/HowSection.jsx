@@ -8,17 +8,17 @@ function HowSection() {
         <div className="flex flex-col lg:flex-row justify-between gap-6 mt-8">
           <div className="p-4 bg-softPink shadow-md border-l-4 border-red rounded-lg">
             <p>
-              Kami menyediakan tes minat dan bakat sederhana yang membantu kamu
-              menemukan bidang pekerjaan sesuai minat dan potensi.
+              Kami menyediakan tes minat dan bakat sederhana untuk membantu kamu
+              menemukan bidang pekerjaan yang sesuai dengan minat dan potensimu.
             </p>
           </div>
 
           <div className="p-4 bg-softPink shadow-md border-l-4 border-red rounded-lg">
             <p>
-              Setelah tes selesai, kami akan merekomendasikan pelatihan sesuai
-              bidang bakat dan minatmu, membantu mengasah atau mempelajari
-              keterampilan baru. Kamu juga akan mendapatkan akses ke sumber daya
-              karier lainnya, seperti CV generator, pengembangan portofolio, dan
+              Setelah menyelesaikan tes, kami akan merekomendasikan pelatihan
+              yang sesuai dengan bakat dan minatmu untuk membantu mengasah
+              keterampilan dan mempelajari hal baru. Kamu juga akan mendapatkan
+              akses ke berbagai sumber daya karier, seperti CV generator dan
               lowongan kerja dari partner WeCare.
             </p>
           </div>
