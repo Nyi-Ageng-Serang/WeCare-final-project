@@ -5,6 +5,7 @@ import Searchbar from "./Searchbar";
 
 function Discussion() {
   const [discussions, setDiscussions] = useState([]);
+  const [filteredDiscussions, setFilteredDiscussions] = useState([]); // Menyimpan hasil filter pencarian
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -15,7 +16,6 @@ function Discussion() {
         const response = await axios.get(
           "https://substantial-starla-ardhilla-fa22d60a.koyeb.app/forum/categories"
         );
-        // Menyimpan data kategori
         setCategories(response.data.categories);
       } catch (error) {
         console.error("Error fetching categories:", error);
@@ -34,22 +34,20 @@ function Discussion() {
           "https://substantial-starla-ardhilla-fa22d60a.koyeb.app/forum/posts"
         );
 
-        // Menyaring dan mengubah data yang diterima, termasuk kategori
         const formattedDiscussions = response.data.posts.map((post) => {
-          // Mencocokkan ID kategori
           const category = categories.find((cat) => cat._id === post.category);
 
           return {
             id: post._id,
-            category: category ? category.name : "Unknown", // Menampilkan nama kategori atau 'Unknown' jika tidak ditemukan
-            user: post.user.fullName, // Nama user
-            text: post.title, // Judul postingan
-            time: new Date(post.createdAt).toLocaleString(), // Waktu postingan
+            category: category ? category.name : "Unknown",
+            user: post.user.fullName,
+            text: post.title,
+            time: new Date(post.createdAt).toLocaleString(),
           };
         });
 
-        // Menyimpan data diskusi yang sudah diformat
         setDiscussions(formattedDiscussions);
+        setFilteredDiscussions(formattedDiscussions); // Menyimpan semua diskusi untuk pencarian
       } catch (error) {
         console.error("Error fetching discussions:", error);
         alert("Terjadi kesalahan saat mengambil data.");
@@ -58,19 +56,30 @@ function Discussion() {
       }
     };
 
-    // Menunggu data kategori diambil terlebih dahulu sebelum mengambil data diskusi
     if (categories.length > 0) {
       fetchDiscussions();
     }
-  }, [categories]); // Menjalankan efek ini setiap kali data kategori berubah
-  
+  }, [categories]);
+
+  // Fungsi untuk menangani pencarian
+  const handleSearch = (query) => {
+    if (query.trim() === "") {
+      setFilteredDiscussions(discussions); // Jika query kosong, tampilkan semua diskusi
+    } else {
+      const filtered = discussions.filter((discussion) =>
+        discussion.text.toLowerCase().includes(query.toLowerCase()) // Pencarian berdasarkan judul
+      );
+      setFilteredDiscussions(filtered);
+    }
+  };
+
   return (
     <div className="w-full lg:w-3/4 my-10">
-      <Searchbar />
+      <Searchbar onSearch={handleSearch} /> {/* Kirimkan fungsi pencarian ke Searchbar */}
       {loading ? (
         <h1>Loading...</h1>
       ) : (
-        <DiscussionList discussions={discussions} />
+        <DiscussionList discussions={filteredDiscussions} />
       )}
     </div>
   );
