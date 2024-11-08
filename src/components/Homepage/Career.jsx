@@ -1,7 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getCookie } from "../Cookies";
 import career from "../../assets/rekomendasi.png";
 
 function Career() {
+  const navigate = useNavigate();
+  const handleClick = (e) => {
+    const token = getCookie("token");
+    if (!token) {
+      e.preventDefault();
+      alert("Silakan login terlebih dahulu untuk mengikuti tes.");
+      navigate("/login");
+    }
+  };
+
   return (
     <div className="w-full py-6 my-6">
       <div className="container mx-auto px-10">
@@ -24,7 +35,10 @@ function Career() {
               daya pelatihan untuk mengasah skillmu.
             </p>
 
-            <button className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red">
+            <button
+              onClick={handleClick}
+              className="inline-block font-semibold border-2 border-red bg-red text-white py-2 px-6 rounded-full hover:bg-softPink hover:border-softPink hover:text-red"
+            >
               <Link to="/tes">Ikuti tes Minat Bakat</Link>
             </button>
           </div>

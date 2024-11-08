@@ -26,22 +26,22 @@ const ArtikelSection = () => {
 
   return (
     <>
-      <div className="w-full py-6 my-6">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full py-6">
+        <div className="container mx-auto lg:px-24 px-6">
           <div className="flex justify-between items-center my-4">
-            <h1 className="text-2xl font-bold my-4">Artikel Edukatif</h1>
+            <h1 className="text-xl md:text-2xl font-bold my-4">Artikel Edukatif</h1>
             <div>
               <button
                 onClick={handlePrev}
                 disabled={startIndex === 0}
-                className="px-2 pb-1 bg-red text-softPink text-2xl font-bold rounded-md mr-2"
+                className="px-2 pb-1 bg-red text-softPink lg:text-2xl text-xl font-bold rounded-md mr-2"
               >
                 &lt;
               </button>
               <button
                 onClick={handleNext}
                 disabled={startIndex + blogsPerPage >= blogs.length}
-                className="px-2 pb-1 bg-red text-softPink text-2xl font-bold rounded-md"
+                className="px-2 pb-1 bg-red text-softPink lg:text-2xl text-xl font-bold rounded-md"
               >
                 &gt;
               </button>
