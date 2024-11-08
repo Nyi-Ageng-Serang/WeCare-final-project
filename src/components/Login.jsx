@@ -11,21 +11,20 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.get(
-        "https://66fb57208583ac93b40b758c.mockapi.io/users"
-      );
-      const user = response.data.find(
-        (user) => user.email === email && user.password === password
+      const response = await axios.post(
+        "https://substantial-starla-ardhilla-fa22d60a.koyeb.app/auth/login",
+        { email, password }
       );
 
-      if (user) {
-        setCookie("token", user.token, 7); // simpan token di cookies
+      if (response.data.token) {
+        setCookie("token", response.data.token, 7); // Save token in cookies for 7 days
         navigate("/");
       } else {
-        alert("kamu belum membuat akun, silahkan registrasi terlebih dahulu");
+        alert("Login failed. Please check your credentials.");
       }
     } catch (error) {
       console.error("Login failed:", error);
+      alert("An error occurred during login.");
     }
   };
 
@@ -35,7 +34,6 @@ function Login() {
         <h2 className="text-3xl font-bold text-center mb-6 text-[#230710]">
           Login
         </h2>
-
         <form onSubmit={handleLogin}>
           <div className="mb-4">
             <label className="block text-[#230710] font-semibold mb-2">
