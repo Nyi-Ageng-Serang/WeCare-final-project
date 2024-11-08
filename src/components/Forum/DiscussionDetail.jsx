@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Cookies from "js-cookie"; // Untuk memeriksa token di cookies
 import Hero from "./HeroSection";
 
 function DiscussionDetail() {
@@ -9,6 +10,17 @@ function DiscussionDetail() {
   const [categoryName, setCategoryName] = useState(""); // Menyimpan nama kategori
   const [newComment, setNewComment] = useState("");
   const [loading, setLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Menyimpan status login
+
+  // Fungsi untuk memeriksa apakah user sudah login berdasarkan token di cookies
+  const checkLoginStatus = () => {
+    const token = Cookies.get("token"); // Mengambil token dari cookies
+    if (token) {
+      setIsLoggedIn(true); // Jika token ditemukan, user sudah login
+    } else {
+      setIsLoggedIn(false); // Jika tidak ada token, user belum login
+    }
+  };
 
   // Ambil data kategori dari API
   const fetchCategories = async () => {
@@ -29,6 +41,9 @@ function DiscussionDetail() {
     const fetchDiscussion = async () => {
       try {
         setLoading(true);
+
+        // Periksa status login
+        checkLoginStatus();
 
         // Ambil data kategori terlebih dahulu
         const categories = await fetchCategories();
@@ -64,10 +79,40 @@ function DiscussionDetail() {
     fetchDiscussion();
   }, [id]);
 
-  const handleAddComment = () => {
+  const handleAddComment = async () => {
+    if (!isLoggedIn) {
+      alert("Anda harus login untuk mengirim komentar.");
+      return;
+    }
+
     if (newComment.trim()) {
-      // Logika untuk menambah komentar ke backend bisa ditambahkan di sini
-      setNewComment("");
+      const token = Cookies.get("token");
+
+      try {
+        const response = await axios.post(
+          "https://substantial-starla-ardhilla-fa22d60a.koyeb.app/forum/comment",
+          {
+            postId: id,
+            content: newComment,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`, // Kirimkan token dengan header
+            },
+          }
+        );
+
+        if (response.status === 201) {
+          setNewComment(""); // Reset textarea setelah komentar terkirim
+          alert("Komentar berhasil ditambahkan.");
+          window.location.reload();
+        } else {
+          alert("Terjadi kesalahan saat mengirim komentar.");
+        }
+      } catch (error) {
+        console.error("Error posting comment:", error);
+        alert("Terjadi kesalahan saat mengirim komentar.");
+      }
     }
   };
 
@@ -105,11 +150,13 @@ function DiscussionDetail() {
             placeholder="Tambahkan komentar..."
             value={newComment}
             onChange={(e) => setNewComment(e.target.value)}
+            disabled={!isLoggedIn} // Nonaktifkan textarea jika user belum login
           ></textarea>
           <div className="flex justify-end">
             <button
               onClick={handleAddComment}
               className="inline-block font-semibold border-2 border-red bg-red text-white py-1 px-10 rounded-md hover:bg-softPink hover:border-softPink hover:text-red"
+              disabled={!isLoggedIn || !newComment.trim()} // Nonaktifkan tombol jika user belum login atau komentar kosong
             >
               Kirim
             </button>
