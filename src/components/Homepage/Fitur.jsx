@@ -1,7 +1,7 @@
 import Logo from "../../assets/logoWecare.png";
 import Tes from "../../assets/8.png";
 import Pelatihan from "../../assets/9.png";
-import CV from "../../assets/7.png";
+import Blog from "../../assets/Blog.png";
 import Forum from "../../assets/10.png";
 import Loker from "../../assets/11.png";
 
@@ -25,8 +25,8 @@ function Fitur() {
             </div>
 
             <div className="bg-backgroud p-2 grid justify-items-center rounded-lg shadow-md">
-              <img src={CV} alt="" width={120} />
-              <p className="w-48 text-center">CV Generator</p>
+              <img src={Loker} alt="" width={120} />
+              <p className="w-48 text-center">Lowongan kerja</p>
             </div>
 
             <div className="bg-backgroud p-2 grid justify-items-center rounded-lg shadow-md">
@@ -35,8 +35,8 @@ function Fitur() {
             </div>
 
             <div className="bg-backgroud p-2 grid justify-items-center rounded-lg shadow-md">
-              <img src={Loker} alt="" width={120} />
-              <p className="w-48 text-center">Lowongan kerja</p>
+              <img src={Blog} alt="" width={120} />
+              <p className="w-48 text-center">Blog Edukasi</p>
             </div>
           </div>
         </div>

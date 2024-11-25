@@ -4,9 +4,9 @@ import komunitasIMG from "../../assets/komunitas.png";
 const CommunityCTA = () => {
   return (
     <section className="bg-pink bg-opacity-20">
-      <div className="w-full py-6">
-        <div className="container mx-auto lg:px-24 px-6 py-16">
-          <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 lg:space-y-0 md:space-x-20">
+      <div className="w-full lg:py-24 py-12 my-6 ">
+        <div className="container mx-auto px-10">
+          <div className="flex flex-col lg:flex-row justify-between items-center space-y-6 md:space-y-20 md:pb-10 lg:space-y-0 md:space-x-10">
             {/* Text Section */}
             <div className="">
               <div className=" md:text-left space-y-8 mb-20 md:mb-0">
@@ -23,7 +23,7 @@ const CommunityCTA = () => {
             </div>
 
             {/* Image Section */}
-            <div>
+            <div className="mr-30">
               <div className="relative flex-shrink-0">
                 <div className="bg-[#921A40] md:w-40 w-32 md:h-[28rem] h-[20rem] absolute top-1/2 transform -translate-y-1/2 -translate-x-1/2 z-0 rotate-45 rounded-[100%] left-1/2"></div>
                 <div className="bg-[#921A40] md:w-40 w-32 md:h-[28rem] h-[20rem] absolute top-1/2 transform -translate-y-1/2 translate-x-1/2 z-0 rotate-[135deg] rounded-[100%] right-1/2"></div>

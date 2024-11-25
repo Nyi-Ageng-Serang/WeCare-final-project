@@ -26,8 +26,8 @@ const ArtikelSection = () => {
 
   return (
     <>
-      <div className="w-full py-6">
-        <div className="container mx-auto lg:px-24 px-6">
+      <div className="w-full py-6 my-6">
+        <div className="container mx-auto px-10">
           <div className="flex justify-between items-center my-4">
             <h1 className="text-xl md:text-2xl font-bold my-4">Artikel Edukatif</h1>
             <div>

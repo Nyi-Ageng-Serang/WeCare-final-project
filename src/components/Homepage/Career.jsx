@@ -9,7 +9,7 @@ function Career() {
     if (!token) {
       e.preventDefault();
       alert("Silakan login terlebih dahulu untuk mengikuti tes.");
-      navigate("/login");
+      navigate("/");
     }
   };
 
